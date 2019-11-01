@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Style from '../style'
 
 const App: React.FC = () => {
-  return <AppContainer></AppContainer>
+  return <AppContainer>Hoge</AppContainer>
 }
 
 const AppContainer = styled.div`
