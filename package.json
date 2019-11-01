@@ -68,7 +68,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint": "./node_modules/.bin/tslint --project '.' --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -137,5 +138,9 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "tslint": "^5.20.0",
+    "tslint-react": "^4.1.0"
   }
 }
