@@ -64,6 +64,7 @@
       "check-whitespace"
     ],
     "one-variable-per-declaration": true,
+    "object-literal-sort-keys": false,
     "quotemark": [true, "single", "avoid-escape", "jsx-double"],
     "semicolon": [true, "never"],
     "strict-type-predicates": true,
