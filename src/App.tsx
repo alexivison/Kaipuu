@@ -1,15 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Style from '../style'
+import AppRouter from './routes/AppRouter'
+
+import Style from './style'
 
 const App: React.FC = () => {
-  return <AppContainer>Hoge</AppContainer>
+  return (
+    <AppContainer>
+      <AppRouter />
+    </AppContainer>
+  )
 }
 
 const AppContainer = styled.div`
   min-height: 100vh;
-  background-color: ${Style.Color.Black};
+  background-color: ${Style.Color.LightGray};
   font-size: ${Style.FontSize.Normal};
 `
 

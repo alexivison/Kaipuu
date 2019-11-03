@@ -22,6 +22,7 @@
         "variable-declaration": "onespace"
       }
     ],
+    "interface-name": [true, "never-prefix"],
     "await-promise": true,
     "curly": [true, "ignore-same-line"],
     "deprecation": true,
