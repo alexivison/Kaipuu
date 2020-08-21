@@ -1,22 +1,18 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import AppRouter from './routes/AppRouter'
-
-import Style from './style'
+import ThemeProvider from './style/ThemeProvider'
+import GlobalStyleProvider from './style/GlobalStyleProvider'
 
 const App: React.FC = () => {
   return (
-    <AppContainer>
-      <AppRouter />
-    </AppContainer>
+    <ThemeProvider>
+      <>
+        <GlobalStyleProvider />
+        <AppRouter />
+      </>
+    </ThemeProvider>
   )
 }
-
-const AppContainer = styled.div`
-  min-height: 100vh;
-  background-color: ${Style.Color.LightGray};
-  font-size: ${Style.FontSize.Normal};
-`
 
 export default App
