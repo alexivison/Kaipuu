@@ -39,8 +39,9 @@ const PageContainer = styled.div`
   ${({ theme }) => theme.isMobile
     ? ``
     : `
+      display: grid;
       justify-self: center;
-      padding: 48px 0;
+      padding-top: 48px;
       width: 50vw;
       max-width: 50vw;
     `
@@ -56,9 +57,9 @@ const Routes: React.FC = () => {
 
   const transitions = useTransition(location, ({ pathname }) => pathname, {
     config: { mass: 1, tension: 2000, friction: 300 },
-    from: { opacity: 0, transform: isMobile ? 'translate3d(0px, 0px, 0)' : 'translate3d(0px, -32px, 0)' },
-    enter: { opacity: 1, transform: 'translate3d(0px, 0px, 0)' },
-    leave: { opacity: 0, transform: isMobile ? 'translate3d(0px, 0px, 0)' : 'translate3d(0px, 32px, 0)' },
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
   })
 
   return (
