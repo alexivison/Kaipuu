@@ -11,8 +11,9 @@ const GlobalStyleProvider: React.FC = () => {
 
 const GlobalStyle = createGlobalStyle`
   body {
+    overflow: hidden;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Hiragino Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
     transition: background-color .2s ease-in-out;
