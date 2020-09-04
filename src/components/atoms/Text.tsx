@@ -26,7 +26,6 @@ Text.defaultProps = {
 const Container = styled.div<Omit<Props, 'children'>>`
   color: ${({ theme, sub }) => sub ? theme.subText : theme.text};
   font-size: ${({ size }) => size}px;
-  font-family: 'PT Sans', sans-serif;
   line-height: ${({ lineHeight }) => lineHeight};
   user-select: none;
 `

@@ -29,13 +29,13 @@ const Bio: React.FC = () => {
   const transitions = useTransition(activeIndex, item => item, {
     from: { 
       opacity: 0, 
-      transform: isMobile 
+      transform: isMobile
         ? isGoingBack 
           ? 'translate3d(-300px, 0px, 0)'
           : 'translate3d(300px, 0px, 0)' 
         : 'translate3d(0px, -48px, 0)'
     },
-    enter: { 
+    enter: {
       opacity: 1, 
       transform: 'translate3d(0px, 0px, 0)', 
       delay: 300 
