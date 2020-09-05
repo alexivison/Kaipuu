@@ -5,6 +5,7 @@ import Skills from '../components/pages/Skills'
 
 export interface RouteMap {
   [key: string]: {
+    icon: string
     title: string
     path: string
     component: React.FC
@@ -14,23 +15,27 @@ export interface RouteMap {
 
 const routes: RouteMap = {
   Home: {
-    title: 'Home',
+    icon: '上',
+    title: 'TOP',
     path: '/',
     component: Home,
     exact: true,
   },
   Bio: {
-    title: 'About Me',
+    icon: '自',
+    title: 'BIO',
     path: '/bio',
     component: Bio,
   },
   Skills: {
-    title: 'Skills',
+    icon: '技',
+    title: 'SKILLS',
     path: '/skills',
     component: Skills,
   },
   Portfolio: {
-    title: 'Portfolio',
+    icon: '作',
+    title: 'WORK',
     path: '/portfolio',
     component: Portfolio,
   },

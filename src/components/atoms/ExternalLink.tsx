@@ -3,12 +3,11 @@ import styled from 'styled-components'
 
 interface Props {
   to: string
-  title?: string
   className?: string
 }
 
-const ExternalLink: React.FC<Props> = ({ to, title, className }) => {
-  return <Anchor className={className} href={to}>{title}</Anchor>
+const ExternalLink: React.FC<Props> = ({ to, className, children }) => {
+  return <Anchor className={className} href={to}>{children}</Anchor>
 }
 
 const Anchor = styled.a`
