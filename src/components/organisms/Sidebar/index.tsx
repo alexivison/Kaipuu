@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router'
-import { useSpring, useTransition } from 'react-spring'
+import { useSpring } from 'react-spring'
 
 import { 
   Container, 
   Nav, 
-  PageTitle, 
-  Title, 
-  SubTitle, 
   Inner,
   Outer,
   Separator, 
@@ -27,12 +24,6 @@ interface Props {
 const Sidebar: React.FC<Props> = ({ routes, header }) => {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
-
-  // const transitions = useTransition(header, (item) => item?.title, {
-  //   from: { opacity: 0, transform: 'translate3d(0, -20px, 0)' },
-  //   enter: { opacity: 1, transform: 'translate3d(0, 0px, 0)' },
-  //   leave: { opacity: 0, transform: 'translate3d(0, 20px, 0)' },
-  // })
 
   useEffect(() => {
     setOpen(pathname !== '/')

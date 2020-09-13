@@ -13,12 +13,11 @@ export const OuterLine = styled.div`
 
   &:after {
     content: "";
-    position: fixed;
-    width: 4px;
-    top: 0;
-    bottom: 0;
-    background-color: inherit;
-    box-shadow: 1px 0px 0px 1px ${({ theme }) => theme.highlight};
+    position: absolute;
+    width: 2px;
+    top: -120px;
+    bottom: -120px;
+    background-color: ${({ theme }) => theme.text};
   }
 `
 
@@ -28,26 +27,28 @@ export const Line = styled(animated.div)`
   &:after {
     content: "";
     position: absolute;
-    width: 19px;
-    height: 20px;
-    background-color: ${({ theme }) => theme.accent};
-    bottom: -10px;
-    left: -7px;
-    border-radius: 50%;
+    bottom: 0;
+    left: -9px;
+    width: 16px;
+    height: 16px;
+    background-color: ${({ theme }) => theme.background};
+    border: 2px solid ${({ theme }) => theme.text};
+    transform: rotate(45deg);
     z-index: 3;
   }
 ` as typeof animated.div
 
 export const SubWrapper = styled.div`
   display: grid;
-  grid-gap: 24px;
+  grid-gap: 56px;
 `
 
 export const Date = styled.div`
   line-height: 1;
-  font-size: 12px;
+  font-size: 24px;
   user-select: none;
   color: ${({ theme }) => theme.subText};
+  letter-spacing: 4px;
   transition: all .3s ease-in-out;
 `
 

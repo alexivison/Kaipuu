@@ -38,7 +38,6 @@ const Bio: React.FC = () => {
     enter: {
       opacity: 1, 
       transform: 'translate3d(0px, 0px, 0)', 
-      delay: 300 
     },
     leave: { 
       opacity: 0, 
@@ -76,7 +75,7 @@ const Bio: React.FC = () => {
           </LeftColumn>}
         {transitions.map(({ key, props }) => (
           <RightColumn key={key} style={props}>
-            <ProfileCard title={isMobile ? data[activeIndex].title : undefined} text={data[activeIndex].text} image={data[activeIndex].image} date={isMobile ? data[activeIndex].date : undefined} />
+            <ProfileCard title={data[activeIndex].title} text={data[activeIndex].text} image={data[activeIndex].image} date={isMobile ? data[activeIndex].date : undefined} />
             {isMobile && (
               <HogeContainer>
                 {activeIndex > 0 && <BackButton onClick={onClickBack} />}
@@ -87,11 +86,6 @@ const Bio: React.FC = () => {
         ))}
     </Container>
   )
-}
-
-Bio.header = {
-  title: "ALEKSI TUOMINEN",
-  subTitle: "アレクシ・トゥオミネン"
 }
 
 export default Bio

@@ -3,20 +3,21 @@ import styled from 'styled-components'
 import BaseText from '../../atoms/Text'
 import BaseImage from '../../atoms/Image'
 
-export const Container = styled.div`
-`
+export const Container = styled.div``
 
 export const ImageContainer = styled.div`
-  display: grid;
-  justify-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
 `
 
 export const TextContainer = styled.div`
-  padding: 16px;
+  padding: 0px 16px;
 `
 
 export const ProfileImage = styled(BaseImage).attrs({
-  size: 250
+  size: 340
 })`
   ${({ theme }) => theme.isMobile ?
   `
@@ -40,20 +41,24 @@ export const ProfileImage = styled(BaseImage).attrs({
     border-top-right-radius: 8px;
   }
   ` : `
-  
+    filter: saturate(0.3);
   `}
 `
 
 
 export const Title = styled(BaseText)`
-  font-size: 22px;
-  margin-bottom: 16px;
+  font-size: 40px;
+  letter-spacing: 4px;
   line-height: 1;
-  font-weight: bold;
+  font-weight: 400;
+  margin-left: -96px;
+  width: max-content;
+  padding: 16px;
+  background-color: ${({ theme }) => theme.background};
 `
 
 export const Text = styled(BaseText).attrs({
-  lineHeight: 1.5
+  lineHeight: 2
 })`
   overflow-wrap: break-word;
   white-space: pre-line;

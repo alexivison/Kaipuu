@@ -3,7 +3,14 @@ import { useTrail, useSpring } from 'react-spring'
 
 import { Data } from '../../pages/Bio/data'
 
-import { Container, OuterLine, Line, SubWrapper, SubContainer, CircleYo, Date, Title } from './styled'
+import { 
+  Container, 
+  OuterLine, 
+  Line, 
+  SubWrapper, 
+  SubContainer, 
+  Date, 
+} from './styled'
 
 interface Props {
   data: Data[]
@@ -12,7 +19,34 @@ interface Props {
 
 const BioTimeline: React.FC<Props> = ({ data, onChange }) => {
   const [index, setIndex] = useState(0)
-  const calcHeight = (100 / data.length) * (1 + index)
+  const calcHeight = (100 / data.length) * index
+
+  // FIXME: Dunno why this works...
+  const hage = (() => {
+    switch(index) {
+      case 0:
+        return 7
+      case 1:
+        return 10
+      case 2:
+        return 13
+      case 3:
+        return 16
+      case 4:
+        return 19
+      default:
+        return 0
+    }
+  })()
+
+  const hoge = (() => {
+    switch(index) {
+      case data.length -1:
+        return 100
+      default:
+        return calcHeight + hage
+    }
+  })()
 
   const trail = useTrail(data.length, {
     config: { mass: 5, tension: 2500, friction: 200 },
@@ -27,14 +61,12 @@ const BioTimeline: React.FC<Props> = ({ data, onChange }) => {
   return (
     <Container>
       <OuterLine>
-        <Line style={useSpring({ height: `${calcHeight - ((100 / (24 - ((1 + index) * 0.01))) + (data.length - index))}%` })} />
+        <Line style={useSpring({ height: `${hoge}%` })} />
       </OuterLine>
       <SubWrapper>
         {trail.map((style, key) => (
-          <SubContainer key={`timeline-item-${key}`} style={style}  onClick={() => setIndex(key)} isOpen={index >= key}>
-            <CircleYo />
+          <SubContainer key={`timeline-item-${key}`} style={style}  onClick={() => setIndex(key)} isOpen={index === key}>
             <Date>{data[key].date}</Date>
-            <Title>{data[key].title}</Title>
           </SubContainer>
         ))}
       </SubWrapper>

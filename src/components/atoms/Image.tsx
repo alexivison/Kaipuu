@@ -23,7 +23,7 @@ const Image: React.FC<Props> = ({ children, ...props }) => {
 Image.defaultProps = {
   size: 100,
   mask: false,
-  rounded: true
+  rounded: false
 }
 
 const Container = styled.div<Props>`

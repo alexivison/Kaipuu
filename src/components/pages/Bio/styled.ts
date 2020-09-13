@@ -20,7 +20,11 @@ export const Container = styled.div`
   `}
 `
 
-export const LeftColumn = styled.div``
+export const LeftColumn = styled.div`
+  display: grid;
+  grid-auto-rows: min-content;
+  justify-content: center;
+`
 
 export const RightColumn = styled(animated.div)`
   position: absolute;
@@ -34,13 +38,10 @@ export const RightColumn = styled(animated.div)`
     width: 100vw;
   ` : `
     right: 0;
-    top: 0;
-    bottom: 0;
-    border-radius: 8px;
+    top: 32px;
+    border: 2px solid ${theme.text};
     padding: 24px 16px;
-    box-shadow: 0px 0px 16px 2px ${theme.highlight};
     width: calc(50% - (48px / 2));
-    background: linear-gradient(75deg, ${theme.background} 0%, ${theme.highlight} 100%);
   `}
 `
 

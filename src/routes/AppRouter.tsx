@@ -56,7 +56,7 @@ const Routes: React.FC = () => {
   const [currentHeader, setCurrentHeader] = useState<{ title: string, subTitle?: string } | undefined>(undefined)
 
   const transitions = useTransition(location, ({ pathname }) => pathname, {
-    config: { mass: 1, tension: 2000, friction: 300 },
+    config: { duration: 200 },
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
