@@ -11,21 +11,24 @@ import VaporLogo from '../../../res/img/vapor.png'
 import { ProgressLevel } from '../../molecules/ProgressBar'
 
 export interface Data {
+  title: string
   image: string
+  category: SkillCategory
   level: ProgressLevel
-  testLevel: ProgressLevel
 }
 
 const data: Data[] = [
-  { image: ReactLogo, level: 4, testLevel: 2 },
-  { image: ReactNativeLogo, level: 4, testLevel: 1 },
-  { image: VueLogo, level: 2, testLevel: 1 },
-  { image: JSLogo, level: 3, testLevel: 0 },
-  { image: HTMLLogo, level: 4, testLevel: 0 },
-  { image: CSSLogo, level: 4, testLevel: 0 },
-  { image: SwiftLogo, level: 3, testLevel: 3 },
-  { image: RxLogo, level: 3, testLevel: 3 },
-  { image: VaporLogo, level: 2, testLevel: 0 },
+  { title: 'React', image: ReactLogo, category: 'web', level: 4 },
+  { title: 'Vue', image: VueLogo, category: 'web', level: 2 },
+  { title: 'JavaScript', image: JSLogo, category: 'web', level: 3 },
+  { title: 'HTML', image: HTMLLogo, category: 'web', level: 4 },
+  { title: 'CSS', image: CSSLogo, category: 'web', level: 4 },
+  { title: 'React Native', image: ReactNativeLogo, category: 'native', level: 4 },
+  { title: 'Swift', image: SwiftLogo, category: 'native', level: 3 },
+  { title: 'RxSwift', image: RxLogo, category: 'native', level: 3 },
+  { title: 'Vapor', image: VaporLogo, category: 'native', level: 2 },
+  { title: 'Figma', image: RxLogo, category: 'design', level: 3 },
+  { title: 'Sketch', image: VaporLogo, category: 'design', level: 2 },
 ]
 
 export default data

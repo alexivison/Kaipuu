@@ -10,9 +10,8 @@ export const Container = styled.div`
   justify-items: center;
   height: 90%;
   padding: 8vh;
-  border-top: 6px solid ${({ theme }) => theme.text};
-  border-left: 6px solid ${({ theme }) => theme.text};
-  border-right: 6px solid ${({ theme }) => theme.text};
+  border: 4px solid ${({ theme }) => theme.text};
+  border-bottom: none;
 `
 
 export const TextContainer = styled.div`

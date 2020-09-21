@@ -56,16 +56,13 @@ export const TextWrapper = styled.div`
   }
 `
 
-export const Title = styled(BaseText).attrs({
-  size: 24,
-})`
+export const Title = styled(BaseText)`
+  font-size: 24px;
   z-index: 1;
 `
 
-export const Date = styled(BaseText).attrs({
-  size: 12,
-  sub: true,
-})`
+export const Date = styled(BaseText)`
+  font-size: 12px;
   z-index: 1;
 `
 

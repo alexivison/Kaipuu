@@ -1,22 +1,27 @@
 import React from 'react'
 
-import { Container, SkillIcon, IndicatorContainer } from './styled'
+import { 
+  Container, 
+  SkillIcon, 
+  IndicatorContainer,
+  Title,
+} from './styled'
 
 import ProgressBar, { ProgressLevel } from '../../molecules/ProgressBar'
 
 interface Props {
+  title: string
   image: string
   level: ProgressLevel
-  testLevel: ProgressLevel
 }
 
-const Skill: React.FC<Props> = ({ image, level, testLevel }) => {
+const Skill: React.FC<Props> = ({ title, image, level }) => {
   return (
     <Container>
       <SkillIcon src={image} />
       <IndicatorContainer>
-        <ProgressBar title="実装" level={level} />
-        <ProgressBar title="テスト" level={testLevel} />
+        <Title>{title}</Title>
+        <ProgressBar level={level} />
       </IndicatorContainer>
     </Container>
   )

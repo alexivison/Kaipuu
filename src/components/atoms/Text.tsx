@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+import { ReactProps } from '../../types/enhance'
+
+interface Props extends ReactProps {
   children?: string
   sub?: boolean
   size?: number
   lineHeight?: number
-  className?: string
+  className?: string,
 }
 
 const Text: React.FC<Props> = ({ children, ...props }) => {

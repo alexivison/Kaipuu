@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: grid;
   grid-gap: 32px;
   grid-template-columns: auto 1fr;
+  padding-top: 80px;
 `
 
 export const OuterLine = styled.div`
@@ -15,8 +16,8 @@ export const OuterLine = styled.div`
     content: "";
     position: absolute;
     width: 2px;
-    top: -120px;
-    bottom: -120px;
+    top: -128px;
+    bottom: -128px;
     background-color: ${({ theme }) => theme.text};
   }
 `

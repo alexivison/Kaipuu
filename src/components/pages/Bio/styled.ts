@@ -20,11 +20,7 @@ export const Container = styled.div`
   `}
 `
 
-export const LeftColumn = styled.div`
-  display: grid;
-  grid-auto-rows: min-content;
-  justify-content: center;
-`
+export const LeftColumn = styled.div``
 
 export const RightColumn = styled(animated.div)`
   position: absolute;
@@ -39,9 +35,9 @@ export const RightColumn = styled(animated.div)`
   ` : `
     right: 0;
     top: 32px;
-    border: 2px solid ${theme.text};
+    border: 4px solid ${theme.text};
     padding: 24px 16px;
-    width: calc(50% - (48px / 2));
+    width: 50%;
   `}
 `
 

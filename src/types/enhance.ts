@@ -5,6 +5,7 @@ export interface SamePropTypeOnly<T> {
 
 // DOM related
 export type Div = HTMLDivElement
+export type ReactProps = React.HTMLAttributes<HTMLElement>
 
 // Style related
 export type FontSize = string

@@ -44,6 +44,7 @@ const PageContainer = styled.div`
       padding-top: 48px;
       width: 50vw;
       max-width: 50vw;
+      height: 100vh;
     `
   }
 `
@@ -95,7 +96,6 @@ const RouteContainer = styled(animated.div)`
   grid-auto-rows: auto 1fr;
   width: 100%;
   height: 100%;
-  overflow: auto;
 
   ${({ theme }) => theme.isMobile && `
     padding-top: 64px
