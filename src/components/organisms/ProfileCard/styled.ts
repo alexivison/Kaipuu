@@ -55,14 +55,15 @@ export const Title = styled(BaseText)`
   width: max-content;
   padding: 16px;
   background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
 `
 
-export const Text = styled(BaseText).attrs({
-  lineHeight: 2
-})`
+export const Text = styled(BaseText)`
   overflow-wrap: break-word;
   white-space: pre-line;
   margin-bottom: 8px;
+  line-height: 2;
+  color: ${({ theme }) => theme.text};
 
   ${({ theme }) => theme.isMobile && `
     font-size: 18px;

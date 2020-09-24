@@ -30,7 +30,6 @@ const Container = styled.div<Props>`
   width: ${({ size, width }) => size || width}px;
   height: ${({ size, height }) => size || height}px;
   border-radius: ${({ rounded }) => rounded ? '50%' : 'initial'};
-  background-color: ${({ theme }) => theme.text};
 
   ${({ mask, src }) => mask 
     ? css`

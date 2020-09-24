@@ -76,7 +76,7 @@ const Routes: React.FC = () => {
       ))}
       {isMobile 
         ? <MobileNav routes={routes} header={currentHeader} />
-        : <Sidebar routes={routes} header={currentHeader} />
+        : <Sidebar routes={routes} />
       }
     </>
   )

@@ -3,11 +3,12 @@ import { animated } from 'react-spring'
 
 import BaseText from '../../atoms/Text'
 import ExternalLink from '../../atoms/ExternalLink'
+import SidewaysContainer from '../../hocs/SidewaysContainer'
 
 export const Container = styled(animated.div)`
   position: fixed;
   display: grid;
-  grid-auto-rows: min-content;
+  grid-template-rows: min-content 1fr min-content;
   height: 100vh;
   z-index: 1;
   padding: 48px;
@@ -31,29 +32,14 @@ export const SubTitle = styled(BaseText).attrs({
   sub: true
 })``
 
-export const Inner = styled.div`
-  padding: 50% 0;
-  height: 0;
-`
-
-export const Outer = styled.div`
-  display: table;
-`
-
-export const Wrapper = styled.div`
-  transform-origin: top left;
-  transform: rotate(-90deg) translate(-100%);
-  margin-top: -50%;
-  white-space: nowrap;
-
-  padding: 13px;
-`
-
 export const Separator = styled.div`
   width: 4px;
-  height: 118px;
   margin-left: 24px;
   background-color: ${({ theme }) => theme.accent};
+`
+
+export const SocialContainer = styled(SidewaysContainer)`
+  padding: 13px;
 `
 
 export const SocialLink = styled(ExternalLink)`

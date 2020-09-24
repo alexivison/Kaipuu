@@ -5,9 +5,6 @@ import { ReactProps } from '../../types/enhance'
 
 interface Props extends ReactProps {
   children?: string
-  sub?: boolean
-  size?: number
-  lineHeight?: number
   className?: string,
 }
 
@@ -19,16 +16,7 @@ const Text: React.FC<Props> = ({ children, ...props }) => {
   )
 }
 
-Text.defaultProps = {
-  sub: false,
-  size: 16,
-  lineHeight: 1,
-}
-
-const Container = styled.div<Omit<Props, 'children'>>`
-  color: ${({ theme, sub }) => sub ? theme.subText : theme.text};
-  font-size: ${({ size }) => size}px;
-  line-height: ${({ lineHeight }) => lineHeight};
+const Container = styled.div`
   user-select: none;
 `
 

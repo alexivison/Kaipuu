@@ -25,6 +25,7 @@ export const Title = styled(Text)`
   width: max-content;
   padding: 16px 0;
   background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
 `
 
 export const SubTitleContainer = styled.div`
@@ -32,9 +33,9 @@ export const SubTitleContainer = styled.div`
   grid-gap: 16px;
 `
 
-export const SubTitle = styled(Text).attrs({ 
-  sub: true,
-})``
+export const SubTitle = styled(Text)`
+  color: ${({ theme }) => theme.text};
+`
 
 export const Menu = styled.div`
   display: grid;

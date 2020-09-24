@@ -1,22 +1,37 @@
 import React from 'react'
 
-import { Container, TextWrapper, Title, Date, Description } from './styled'
+import { 
+  Container,  
+  Index,
+  ThumbnailBackground,
+  ThumbnailImage,
+  CategoryContainer,
+  CategoryBackgroundContainer,
+  CategoryBackground,
+  Category,
+} from './styled'
 
 interface Props {
-  image?: string
-  title: string
-  date: string
-  description?: string
+  index: number
+  thumbnail?: string
+  type: string
+  onClick?: () => void
 }
 
-const Produce: React.FC<Props> = ({ image, title, date, description }) => {
+const Produce: React.FC<Props> = ({ index, type, thumbnail, onClick }) => {
+  const indexToString = "." + ("00" + index).slice(-3)
+
   return (
-    <Container src={image}>
-      <TextWrapper>
-        <Title>{title}</Title>
-        <Date>{date}</Date>
-        {description && <Description>{description}</Description>}
-      </TextWrapper>
+    <Container onClick={onClick}>
+      <ThumbnailBackground />
+      <CategoryBackgroundContainer>
+        <CategoryBackground>{type}</CategoryBackground>
+      </CategoryBackgroundContainer>
+      <CategoryContainer>
+        <Category>{type}</Category>
+      </CategoryContainer>
+      <ThumbnailImage src={thumbnail} />
+      <Index>{indexToString}</Index>
     </Container>
   )
 }

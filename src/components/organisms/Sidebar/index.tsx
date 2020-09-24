@@ -5,11 +5,9 @@ import { useSpring } from 'react-spring'
 import { 
   Container, 
   Nav, 
-  Inner,
-  Outer,
-  Separator, 
+  Separator,
+  SocialContainer,
   SocialLink,
-  Wrapper,
 } from './styled'
 
 import NavItem from '../../molecules/NavItem'
@@ -18,10 +16,9 @@ import { RouteMap } from '../../../routes'
 
 interface Props {
   routes: RouteMap
-  header?: { title: string, subTitle?: string }
 }
 
-const Sidebar: React.FC<Props> = ({ routes, header }) => {
+const Sidebar: React.FC<Props> = ({ routes }) => {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
 
@@ -44,24 +41,12 @@ const Sidebar: React.FC<Props> = ({ routes, header }) => {
         ))}
       </Nav>
       <Separator />
-      <SidewayContainer>
+      <SocialContainer>
         <SocialLink to='https://github.com/alexivison'>Github・</SocialLink>
         <SocialLink to='https://twitter.com/DJAlexIvison'>Twitter・</SocialLink>
         <SocialLink to='https://soundcloud.com/alex_ivison'>Soundcloud</SocialLink>
-      </SidewayContainer>
+      </SocialContainer>
     </Container>
-  )
-}
-
-const SidewayContainer: React.FC = ({ children }) => {
-  return (
-    <Outer>
-      <Inner>
-        <Wrapper>
-          {children}
-        </Wrapper>
-      </Inner>
-    </Outer>
   )
 }
 
