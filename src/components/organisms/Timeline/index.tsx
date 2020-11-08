@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTrail, useSpring } from 'react-spring'
 
-import { Data } from '../../pages/Bio/data'
-
 import { 
   Container, 
   OuterLine, 
@@ -13,7 +11,7 @@ import {
 } from './styled'
 
 interface Props {
-  data: Data[]
+  data: BioPageData[]
   onChange: (arg: number) => void
 }
 

@@ -37,8 +37,6 @@ const PlaceHolder = styled.div`
   position: fixed;
   top: 24px;
   right: 24px;
-  // width: 24px;
-  // height: 24px;
   border-radius: 50%;
   background-color: red;
   cursor: pointer;

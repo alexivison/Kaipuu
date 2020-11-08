@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { useLocation } from 'react-router'
 import { useSpring } from 'react-spring'
+
+import useSidebarContext from '../../hooks/useSidebarContext'
 
 import { 
   Container, 
@@ -12,24 +14,18 @@ import {
 
 import NavItem from '../../molecules/NavItem'
 
-import { RouteMap } from '../../../routes'
-
 interface Props {
   routes: RouteMap
 }
 
 const Sidebar: React.FC<Props> = ({ routes }) => {
-  const [open, setOpen] = useState(false)
+  const { state: { isOpen } } = useSidebarContext()
   const { pathname } = useLocation()
 
-  useEffect(() => {
-    setOpen(pathname !== '/')
-  }, [pathname])
-
   return (
-    <Container style={useSpring({ left: open ? '0vw' : '-15vw', opacity: open ? 1 : 0 })}>
+    <Container style={useSpring({ left: isOpen ? '0vw' : '-15vw', opacity: isOpen ? 1 : 0 })}>
       <Nav>
-        {Object.values(routes).map(({ path, title, icon }, index) => (
+        {Object.values(routes).map(({ path, title, icon, sub }, index) => !sub && (
           <NavItem 
             key={index}
             icon={icon}

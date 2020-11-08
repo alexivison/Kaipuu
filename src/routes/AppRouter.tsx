@@ -15,6 +15,8 @@ import MobileNav from '../components/organisms/MobileNav'
 
 import useDetectMobile from '../components/hooks/useDetectMobile'
 
+import { SidebarContextProvider } from '../components/context/SidebarContext'
+
 interface Props {
   path: string
   component: React.FC
@@ -64,7 +66,7 @@ const Routes: React.FC = () => {
   })
 
   return (
-    <>
+    <SidebarContextProvider>
       {transitions.map(({ key, item, props: style }) => (
         <RouteContainer key={key} style={style}>
           <Switch location={item}>
@@ -78,7 +80,7 @@ const Routes: React.FC = () => {
         ? <MobileNav routes={routes} header={currentHeader} />
         : <Sidebar routes={routes} />
       }
-    </>
+    </SidebarContextProvider>
   )
 }
 

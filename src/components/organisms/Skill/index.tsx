@@ -7,12 +7,12 @@ import {
   Title,
 } from './styled'
 
-import ProgressBar, { ProgressLevel } from '../../molecules/ProgressBar'
+import ProgressBar from '../../molecules/ProgressBar'
 
 interface Props {
   title: string
   image: string
-  level: ProgressLevel
+  level: SkillProgressLevel
 }
 
 const Skill: React.FC<Props> = ({ title, image, level }) => {

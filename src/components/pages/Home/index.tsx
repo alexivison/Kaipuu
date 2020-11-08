@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import useSidebarContext from '../../hooks/useSidebarContext'
 
 import { 
   Container,
@@ -11,6 +12,14 @@ import {
  } from './styled'
 
 const Home: React.FC = () => {
+  const { openSidebar, closeSidebar } = useSidebarContext()
+
+  useEffect(() => {
+    closeSidebar()
+
+    return () => openSidebar()
+  }, [])
+
   return (
     <Container>
       <TextContainer>
@@ -24,7 +33,7 @@ const Home: React.FC = () => {
       <Menu>
         <MenuItem to="/bio">.01＼BIO</MenuItem>
         <MenuItem to="/skills">.02＼SKILLS</MenuItem>
-        <MenuItem to="/portfolio">.03＼WORK</MenuItem>
+        <MenuItem to="/work">.03＼WORK</MenuItem>
       </Menu>
     </Container>
   )

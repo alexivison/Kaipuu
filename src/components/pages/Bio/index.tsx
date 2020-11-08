@@ -4,7 +4,7 @@ import { useTransition } from 'react-spring'
 
 import useDetectMobile from '../../hooks/useDetectMobile'
 
-import data from './data'
+import data from '../../../res/pageData/bio'
 import { 
   Container, 
   LeftColumn, 

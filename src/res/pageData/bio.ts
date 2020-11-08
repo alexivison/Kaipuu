@@ -1,17 +1,10 @@
-import KosenPicture from '../../../res/img/kosen.jpg'
-import AMKPicture from '../../../res/img/default-profile.jpg'
-import TonpeiPicture from '../../../res/img/tonpei.jpg'
-import InttiPicture from '../../../res/img/intti-profile.jpg'
-import ProfilePicture from '../../../res/img/profile.jpg'
+import KosenPicture from '../img/bio/kosen.jpg'
+import AMKPicture from '../img/bio/default-profile.jpg'
+import TonpeiPicture from '../img/bio/tonpei.jpg'
+import InttiPicture from '../img/bio/intti-profile.jpg'
+import ProfilePicture from '../img/bio/profile.jpg'
 
-export interface Data {
-  date: string
-  image: string
-  title: string
-  text: string
-}
-
-const data: Data[] = [
+const pageData: BioPageData[] = [
   { 
     date: '1994', 
     image: ProfilePicture,
@@ -65,4 +58,4 @@ const data: Data[] = [
   },
 ]
 
-export default data
+export default pageData

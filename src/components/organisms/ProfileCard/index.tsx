@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import DefaultPicture from '../../../res/img/default-profile.jpg'
-
 import { 
   Container, 
   ImageContainer, 
@@ -13,13 +11,13 @@ import {
 } from './styled'
 
 interface Props {
-  image?: string
+  image: string
   title?: string
   text?: string
   date?: string
 }
 
-const ProfileCard: React.FC<Props> = ({ image = DefaultPicture, text = '', title, date }) => {
+const ProfileCard: React.FC<Props> = ({ image, text = '', title, date }) => {
   const [savedText,] = useState(text.trim())
   const [savedImage,] = useState(image)
   const [savedTitle,] = useState(title)

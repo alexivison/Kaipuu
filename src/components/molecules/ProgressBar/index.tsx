@@ -6,10 +6,8 @@ import {
   Indicator 
 } from './styled'
 
-export type ProgressLevel = 0 | 1 | 2 | 3 | 4
-
 interface Props {
-  level: ProgressLevel
+  level: SkillProgressLevel
 }
 
 const ProgressBar: React.FC<Props> = ({ level }) => {

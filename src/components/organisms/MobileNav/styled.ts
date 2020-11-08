@@ -3,10 +3,6 @@ import { animated } from 'react-spring'
 
 import ExternalLink from '../../atoms/ExternalLink'
 
-import TwitterLogo from '../../../res/img/twitter.svg'
-import SoundcloudLogo from '../../../res/img/soundcloud.svg'
-import GithubLogo from '../../../res/img/github.svg'
-
 export const Container = styled.div`
   position: relative;
   display: grid;
@@ -57,33 +53,21 @@ export const MenuFooter = styled.div`
   grid-auto-flow: column;
 `
 
-export const Icon = styled(ExternalLink)<{ src: string }>`
-  background-image: ${({ src }) => `url("${src}");`}
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.text};
-  transition: all .2s ease-in-out;
-`
-
-export const Twitter = styled(Icon).attrs({ src: TwitterLogo, to: 'https://twitter.com/DJAlexIvison' })`
+export const Twitter = styled(ExternalLink).attrs({ to: 'https://twitter.com/DJAlexIvison' })`
   &:hover {
     box-shadow: 0px 0px 0px 8px #1CA1F230;
     background-color: #1CA1F2;
   }
 `
 
-export const Soundcloud = styled(Icon).attrs({ src: SoundcloudLogo, to: 'https://soundcloud.com/alex_ivison' })`
+export const Soundcloud = styled(ExternalLink).attrs({ to: 'https://soundcloud.com/alex_ivison' })`
   &:hover {
     box-shadow: 0px 0px 0px 8px #ff550030;
     background-color: #FF5500;
   }
 `
 
-export const Github = styled(Icon).attrs({ src: GithubLogo, to: 'https://github.com/alexivison' })`
+export const Github = styled(ExternalLink).attrs({ to: 'https://github.com/alexivison' })`
   &:hover {
     box-shadow: 0px 0px 0px 8px #00000030;
     background-color: white;

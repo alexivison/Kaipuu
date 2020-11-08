@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { animated, useTrail, useTransition } from 'react-spring'
 
-import baseData, { Data } from './data'
+import baseData  from '../../../res/pageData/skills'
 import { 
   Container,
   CategorySwitch,
@@ -14,7 +14,7 @@ import {
 import Skill from '../../organisms/Skill'
 
 const Skills: React.FC = () => {
-  const [data, setData] = useState<Data[]>(baseData.filter((item) => item.category === 'web'))
+  const [data, setData] = useState<SkillPageData[]>(baseData.filter((item) => item.category === 'web'))
   const [category, setCategory] = useState<SkillCategory>('web')
 
   useEffect(() => {

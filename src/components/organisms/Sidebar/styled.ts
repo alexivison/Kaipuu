@@ -3,7 +3,7 @@ import { animated } from 'react-spring'
 
 import BaseText from '../../atoms/Text'
 import ExternalLink from '../../atoms/ExternalLink'
-import SidewaysContainer from '../../hocs/SidewaysContainer'
+import SidewaysContainer from '../../molecules/SidewaysContainer'
 
 export const Container = styled(animated.div)`
   position: fixed;

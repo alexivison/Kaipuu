@@ -16,7 +16,6 @@ import {
 
 import Image from '../../atoms/Image'
 
-import { RouteMap } from '../../../routes'
 import MenuIcon from '../../../res/icon/menu.svg'
 
 interface Props {

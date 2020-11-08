@@ -1,17 +1,8 @@
 import Bio from '../components/pages/Bio'
 import Home from '../components/pages/Home'
-import Portfolio from '../components/pages/Portfolio'
+import Work from '../components/pages/Work'
+import WorkDetail from '../components/pages/WorkDetail'
 import Skills from '../components/pages/Skills'
-
-export interface RouteMap {
-  [key: string]: {
-    icon: string
-    title: string
-    path: string
-    component: React.FC
-    exact?: boolean
-  }
-}
 
 const routes: RouteMap = {
   Home: {
@@ -33,11 +24,19 @@ const routes: RouteMap = {
     path: '/skills',
     component: Skills,
   },
-  Portfolio: {
+  Work: {
     icon: '作',
     title: 'WORK',
-    path: '/portfolio',
-    component: Portfolio,
+    path: '/work',
+    component: Work,
+    exact: true,
+  },
+  WorkDetail: {
+    icon: '作',
+    title: 'WORK',
+    path: '/work/:title',
+    component: WorkDetail,
+    sub: true,
   },
 }
 

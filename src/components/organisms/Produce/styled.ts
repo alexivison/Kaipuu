@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
-import DefaultImage from '../../../res/img/default-profile.jpg'
-
 import BaseText from '../../atoms/Text'
-import SidewaysContainer from '../../hocs/SidewaysContainer'
+import SidewaysContainer from '../../molecules/SidewaysContainer'
 
 export const Container = styled.div<{ src?: string }>`
   position: relative;
@@ -41,7 +39,7 @@ export const ThumbnailImage = styled.div<{ src?: string }>`
   align-self: center;
   width: calc(100% - 32px - 4px); 
   height: calc(100% - 32px - 4px);
-  background-image: url(${({ src }) => src || DefaultImage});
+  background-image: url(${({ src }) => src});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,7 +47,7 @@ export const ThumbnailImage = styled.div<{ src?: string }>`
 
 export const Index = styled(BaseText)`
   position: absolute;
-  top: 24px;
+  top: 28px;
   right: 28px;
   font-size: 24px;
   color: ${({ theme }) => theme.text};

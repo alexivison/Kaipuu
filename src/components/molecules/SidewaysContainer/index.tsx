@@ -1,7 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import { ReactProps } from '../../types/enhance'
+import { ReactProps } from '../../../types/enhance'
+
+import {
+  Outer,
+  Inner,
+  Wrapper,
+} from './styled'
 
 interface Props extends ReactProps {
   className?: string
@@ -21,18 +26,3 @@ const SidewaysContainer: React.FC<Props> = ({ children, className }) => {
 
 export default SidewaysContainer
 
-const Inner = styled.div`
-  padding: 50% 0;
-  height: 0;
-`
-
-const Outer = styled.div`
-  display: table;
-`
-
-const Wrapper = styled.div`
-  transform-origin: top left;
-  transform: rotate(-90deg) translate(-100%);
-  margin-top: -50%;
-  white-space: nowrap;
-`

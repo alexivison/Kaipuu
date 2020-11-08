@@ -18,6 +18,10 @@ const Text: React.FC<Props> = ({ children, ...props }) => {
 
 const Container = styled.div`
   user-select: none;
+  letter-spacing: 4px;
+  line-height: 1;
+  font-weight: 300;
+  color: ${({ theme }) => theme.text};
 `
 
 export default Text
