@@ -31,9 +31,9 @@ const Home: React.FC = () => {
         </SubTitleContainer>
       </TextContainer>
       <Menu>
-        <MenuItem to="/bio">.01＼BIO</MenuItem>
-        <MenuItem to="/skills">.02＼SKILLS</MenuItem>
-        <MenuItem to="/work">.03＼WORK</MenuItem>
+        <MenuItem to="/bio">.01 BIO</MenuItem>
+        <MenuItem to="/skills">.02 SKILLS</MenuItem>
+        <MenuItem to="/work">.03 WORK</MenuItem>
       </Menu>
     </Container>
   )

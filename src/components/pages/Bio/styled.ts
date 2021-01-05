@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 import { animated } from 'react-spring'
 
-import Image from '../../atoms/Image'
-
-import ArrowRight from '../../../res/icon/arrow-right.svg'
-import ArrowLeft from '../../../res/icon/arrow-left.svg'
+import BaseText from '../../atoms/Text'
 
 export const Container = styled.div`
   height: 100%;
@@ -41,40 +38,33 @@ export const RightColumn = styled(animated.div)`
   `}
 `
 
-export const HogeContainer = styled.div`
+export const MobileTimelineNav = styled.div(() => `
+  z-index: 1;
   display: grid;
+  padding: 24px 16px;
   grid-auto-flow: column;
-`
+`)
 
-export const NextButton = styled(Image).attrs({
-  mask: true,
-  size: 48,
-  src: ArrowRight,
-})`
-  justify-self: end;
-  background-color: ${({ theme }) => theme.accent};
-`
-
-export const BackButton = styled(Image).attrs({
-  mask: true,
-  size: 48,
-  src: ArrowLeft,
-})`
-  justify-self: start;
-  background-color: ${({ theme }) => theme.accent};
-`
-
-export const Huuga = styled.div<{ stages: number }>`
+export const MobileTimelineNavItem = styled.div`
   display: grid;
-  grid-gap: 8px;
-  grid-template-columns: repeat(${({ stages }) => stages}, 1fr);
-  width: 100vw;
-  background-color: ${({ theme }) => theme.highlight};
+  justify-content: center;
+  // background-color: ${({ theme }) => theme.highlight};
 `
 
-export const InnerHuuga = styled.div<{ stage: number }>`
-  grid-column: ${({ stage }) => stage};
-  height: 8px;
-  background-color: ${({ theme }) => theme.accent};
-  transition: all .5s ease-in-out;
-`
+export const MobileTimelineDate = styled(BaseText)(
+  ({ theme }) => `
+    color: ${theme.text};
+    margin-bottom: 8px;
+  `
+)
+
+interface MobileTimelineNavIndicatorProps {
+  isActive: boolean
+}
+export const MobileTimelineNavIndicator = styled.div<MobileTimelineNavIndicatorProps>(
+  ({ theme, isActive }) => `
+    height: 4px;
+    background-color: ${isActive ? theme.text : 'inherit'};
+    transition: all .5s ease-in-out;
+  `
+)

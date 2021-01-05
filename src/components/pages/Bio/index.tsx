@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react'
-import { useHistory } from 'react-router'
 import { useTransition } from 'react-spring'
 
 import useDetectMobile from '../../hooks/useDetectMobile'
@@ -8,19 +7,17 @@ import data from '../../../res/pageData/bio'
 import { 
   Container, 
   LeftColumn, 
-  RightColumn, 
-  HogeContainer, 
-  NextButton, 
-  BackButton,
-  Huuga,
-  InnerHuuga,
+  RightColumn,
+  MobileTimelineNav,
+  MobileTimelineDate,
+  MobileTimelineNavItem,
+  MobileTimelineNavIndicator,
 } from './styled'
 
 import ProfileCard from '../../organisms/ProfileCard'
 import Timeline from '../../organisms/Timeline'
 
 const Bio: React.FC = () => {
-  const { push } = useHistory()
   const isMobile = useDetectMobile()
 
   const [activeIndex, setActiveIndex] = useState(0)
@@ -49,26 +46,23 @@ const Bio: React.FC = () => {
     },
   })
 
-  const onClickNext = useCallback(() => {
-    if ((activeIndex + 1) === data.length) {
-      return push('/skills')
-    }
-    setIsGoingBack(false)
-    return setActiveIndex(activeIndex + 1)
-  }, [activeIndex])
-
-  const onClickBack = useCallback(() => {
-    setIsGoingBack(true)
-    return setActiveIndex(activeIndex - 1)
+  const onClickHandler = useCallback((index: number) => {
+    setIsGoingBack(index < activeIndex)
+    setActiveIndex(index)
   }, [activeIndex])
 
   return (
     <Container>
       {isMobile 
-        ?
-          <Huuga stages={data.length}>
-            <InnerHuuga stage={activeIndex + 1} />
-          </Huuga>
+        ? // TODO: Separate this into its own component
+          <MobileTimelineNav>
+            {Object.values(data).map((item, index) => (
+              <MobileTimelineNavItem key={item.date} onClick={() => onClickHandler(index)}>
+                <MobileTimelineDate>{item.date}</MobileTimelineDate>
+                <MobileTimelineNavIndicator isActive={activeIndex === index} />
+              </MobileTimelineNavItem>
+            ))}
+          </MobileTimelineNav>
         : 
           <LeftColumn>
             <Timeline data={data} onChange={(index) => setActiveIndex(index)} />
@@ -76,12 +70,6 @@ const Bio: React.FC = () => {
         {transitions.map(({ key, props }) => (
           <RightColumn key={key} style={props}>
             <ProfileCard title={data[activeIndex].title} text={data[activeIndex].text} image={data[activeIndex].image} date={isMobile ? data[activeIndex].date : undefined} />
-            {isMobile && (
-              <HogeContainer>
-                {activeIndex > 0 && <BackButton onClick={onClickBack} />}
-                <NextButton onClick={onClickNext} />
-              </HogeContainer>
-            )}
           </RightColumn>
         ))}
     </Container>

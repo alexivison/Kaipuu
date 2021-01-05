@@ -5,48 +5,53 @@ import BaseImage from '../../atoms/Image'
 
 export const Container = styled.div``
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div(({ theme: { mediaQuery } }) => `
   position: absolute;
   left: 50%;
   top: 50%;
   z-index: -1;
-`
 
-export const TextContainer = styled.div`
-  padding: 0px 16px;
-`
+  ${mediaQuery.medium} {
 
-export const ProfileImage = styled(BaseImage).attrs({
-  size: 340
-})`
-  ${({ theme }) => theme.isMobile ?
-  `
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50vh;
-  border-radius: 0px;
-  z-index: -1;
-  filter: opacity(0.5);
-
-  &: after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    height: 16px;
-    background-color: ${theme.background};
-    bottom: -2px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
   }
-  ` : `
-    filter: saturate(0.3);
-  `}
-`
+
+  ${mediaQuery.small} {
+    position: initial;
+  }
+`)
+
+export const TextContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  padding: 0px 16px;
+
+  ${mediaQuery.medium} {
+    padding: 16px 24px;
+    border: 2px solid ${theme.text};
+  }
+`)
+
+export const ProfileImage = styled(BaseImage)(({ theme: { mediaQuery } }) => `
+  width: 340px;
+  height: 340px;
+  filter: saturate(0.3);
+
+  ${mediaQuery.medium} {
+
+  }
+
+  ${mediaQuery.small} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    border-radius: 0px;
+    z-index: -1;
+    filter: saturate(0.3) opacity(0.5);
+  }
+`)
 
 
-export const Title = styled(BaseText)`
+export const Title = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
   font-size: 40px;
   letter-spacing: 4px;
   line-height: 1;
@@ -54,23 +59,37 @@ export const Title = styled(BaseText)`
   margin-left: -96px;
   width: max-content;
   padding: 16px;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.text};
-`
+  background-color: ${theme.background};
+  color: ${theme.text};
 
-export const Text = styled(BaseText)`
+  ${mediaQuery.medium} {
+    font-size: 32px;
+  }
+
+  ${mediaQuery.small} {
+    width: auto;
+    font-size: 24px;
+    margin: 0;
+    padding: 16px 0;
+    background-color: initial;
+  }
+`)
+
+export const Text = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
   overflow-wrap: break-word;
   white-space: pre-line;
   margin-bottom: 8px;
   line-height: 2;
-  color: ${({ theme }) => theme.text};
+  color: ${theme.text};
 
-  ${({ theme }) => theme.isMobile && `
-    font-size: 18px;
-    line-height: 2;
-  `}
-`
+  ${mediaQuery.medium} {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+`)
 
-export const Date = styled(BaseText)`
-
-`
+export const Date = styled(BaseText)(({ theme: { mediaQuery } }) => `
+  ${mediaQuery.medium} {
+    display: none;
+  }
+`)

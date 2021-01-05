@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { animated, useTrail, useTransition } from 'react-spring'
 
+import useDetectMobile from '../../hooks/useDetectMobile'
+
 import baseData  from '../../../res/pageData/skills'
 import { 
   Container,
@@ -33,29 +35,32 @@ const Skills: React.FC = () => {
     enter: { opacity: 1 },
     leave: { opacity: 0 },
   })
+ 
 
   return (
     <Container>
-      <CategorySwitch>
-        <Category
-          isActive={category === 'web'} 
-          onClick={() => setCategory('web')}
-        >
-          web
-        </Category>
-        <Category
-          isActive={category === 'native'} 
-          onClick={() => setCategory('native')}
-        >
-          native
-        </Category>
-        <Category
-          isActive={category === 'design'}
-          onClick={() => setCategory('design')}
-        >
-          design
-        </Category>
-      </CategorySwitch>
+      {!isMobile && 
+        <CategorySwitch>
+          <Category
+            isActive={category === 'web'} 
+            onClick={() => setCategory('web')}
+          >
+            web
+          </Category>
+          <Category
+            isActive={category === 'native'} 
+            onClick={() => setCategory('native')}
+          >
+            native
+          </Category>
+          <Category
+            isActive={category === 'design'}
+            onClick={() => setCategory('design')}
+          >
+            design
+          </Category>
+        </CategorySwitch>
+      }
       <SkillContainer>
         {transitions.map(({ key, props }) => (
           <ScrollContainer key={key} style={props}>

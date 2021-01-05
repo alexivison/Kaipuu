@@ -14,6 +14,13 @@ const ThemeProvider: React.FC<Props> = ({ children }) => {
 
   const isMobile = useDetectMobile()
 
+  const mediaQuery = {
+    extraSmall: '@media (max-width: 575.98px)',
+    small: '@media (max-width: 767.98px)',
+    medium: '@media (max-width: 991.98px)',
+    large: '@media (max-width: 1199.98px)',
+  }
+
   const onClick = useCallback(() => {
     switch(currentTheme) {
      case 'dark':
@@ -24,7 +31,7 @@ const ThemeProvider: React.FC<Props> = ({ children }) => {
   }, [currentTheme])
 
   return (
-    <Theme theme={{ ...ThemeLibrary[currentTheme], isMobile }}>
+    <Theme theme={{ ...ThemeLibrary[currentTheme], isMobile, mediaQuery }}>
       <>
         <PlaceHolder onClick={onClick} />
         {children}

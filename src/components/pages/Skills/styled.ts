@@ -3,25 +3,31 @@ import { animated } from 'react-spring'
 
 import BaseText from '../../atoms/Text'
 
-export const Container = styled.div`
+export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   position: relative;
   display: grid;
   align-self: end;
   width: 80%;
   height: 90%;
-  border: 4px solid ${({ theme }) => theme.text};
+  border: 4px solid ${theme.text};
   border-bottom: none;
   padding: 40px;
   padding-right: 62px;
-`
 
-export const CategorySwitch = styled.div`
+  ${mediaQuery.medium} {
+    border: none;
+    padding: 32px;
+    padding-right: inherit;
+  }
+`)
+
+export const CategorySwitch = styled.div(() => `
   position: absolute;
   right: -132px;
   top: 32px;
   display: grid;
   grid-gap: 40px;
-`
+`)
 
 export const Category = styled(BaseText)<{ isActive: boolean }>`
   font-size: 32px;

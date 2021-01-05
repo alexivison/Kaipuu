@@ -5,7 +5,8 @@ import { useTransition } from 'react-spring'
 import { 
   Container, 
   LeftButton, 
-  Menu, 
+  Menu,
+  MenuItem,
   MenuContent,
   MenuHeader,
   MenuFooter,
@@ -51,7 +52,7 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
     <>
       <Container>
         <LeftButton onClick={onOpenMenu}>
-          <Image mask={true} size={48} src={MenuIcon} />
+          <Image size={48} src={MenuIcon} />
         </LeftButton>
       </Container>
       {transitions.map(({ item, key, props }) => item && (
@@ -59,13 +60,15 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
           <MenuHeader></MenuHeader>
           <MenuContent>
             {Object.values(routes).map((route, index) => (
-              <div key={index} onClick={() => onClickMenuItem(route.path)}>{route.title}</div>
+              <MenuItem key={index} onClick={() => onClickMenuItem(route.path)}>
+                {`.0${index} ${route.title}`}
+              </MenuItem>
             ))}
           </MenuContent>
           <MenuFooter>
-            <Github />
-            <Twitter />
-            <Soundcloud />
+            <Github>Github</Github>
+            <Twitter>Twitter</Twitter>
+            <Soundcloud>Soundcloud</Soundcloud>
           </MenuFooter>
         </Menu>
       ))}
