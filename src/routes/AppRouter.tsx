@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route as RouterRoute,
   Switch,
   useLocation,
@@ -82,7 +82,7 @@ const Routes: React.FC = () => {
 
 const AppRouter: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/">
       <Routes />
     </Router>
   )
