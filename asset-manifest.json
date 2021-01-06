@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/Kaipuu/static/js/main.0d1b3962.chunk.js",
-    "main.js.map": "/Kaipuu/static/js/main.0d1b3962.chunk.js.map",
+    "main.js": "/Kaipuu/static/js/main.c906313c.chunk.js",
+    "main.js.map": "/Kaipuu/static/js/main.c906313c.chunk.js.map",
     "runtime-main.js": "/Kaipuu/static/js/runtime-main.f57a6a43.js",
     "runtime-main.js.map": "/Kaipuu/static/js/runtime-main.f57a6a43.js.map",
-    "static/js/2.224596ae.chunk.js": "/Kaipuu/static/js/2.224596ae.chunk.js",
-    "static/js/2.224596ae.chunk.js.map": "/Kaipuu/static/js/2.224596ae.chunk.js.map",
+    "static/js/2.f93b04a2.chunk.js": "/Kaipuu/static/js/2.f93b04a2.chunk.js",
+    "static/js/2.f93b04a2.chunk.js.map": "/Kaipuu/static/js/2.f93b04a2.chunk.js.map",
     "index.html": "/Kaipuu/index.html",
-    "precache-manifest.beeba50e1ce66aa29aa202e3ad4d1a59.js": "/Kaipuu/precache-manifest.beeba50e1ce66aa29aa202e3ad4d1a59.js",
+    "precache-manifest.6495fd7c98dfde61fd88185e26f90548.js": "/Kaipuu/precache-manifest.6495fd7c98dfde61fd88185e26f90548.js",
     "service-worker.js": "/Kaipuu/service-worker.js",
     "static/media/arrow-left.svg": "/Kaipuu/static/media/arrow-left.d3287b36.svg",
     "static/media/arrow-right.svg": "/Kaipuu/static/media/arrow-right.ecede4c3.svg",
@@ -35,7 +35,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f57a6a43.js",
-    "static/js/2.224596ae.chunk.js",
-    "static/js/main.0d1b3962.chunk.js"
+    "static/js/2.f93b04a2.chunk.js",
+    "static/js/main.c906313c.chunk.js"
   ]
 }

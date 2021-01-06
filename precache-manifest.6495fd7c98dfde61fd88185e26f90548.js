@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa5889849f0591110ecb88252c20266f",
+    "revision": "a64e706af1a84379c88428acbdb8e72c",
     "url": "/Kaipuu/index.html"
   },
   {
-    "revision": "5568d80dc30da9b60157",
-    "url": "/Kaipuu/static/js/2.224596ae.chunk.js"
+    "revision": "b8812e0f22d933fec711",
+    "url": "/Kaipuu/static/js/2.f93b04a2.chunk.js"
   },
   {
-    "revision": "a31150ae20fe48799db7",
-    "url": "/Kaipuu/static/js/main.0d1b3962.chunk.js"
+    "revision": "56894e0adc5891948612",
+    "url": "/Kaipuu/static/js/main.c906313c.chunk.js"
   },
   {
     "revision": "59e97ee3372d83230a8d",
