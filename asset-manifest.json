@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.js": "/Kaipuu/static/js/main.0d1b3962.chunk.js",
+    "main.js.map": "/Kaipuu/static/js/main.0d1b3962.chunk.js.map",
+    "runtime-main.js": "/Kaipuu/static/js/runtime-main.f57a6a43.js",
+    "runtime-main.js.map": "/Kaipuu/static/js/runtime-main.f57a6a43.js.map",
+    "static/js/2.224596ae.chunk.js": "/Kaipuu/static/js/2.224596ae.chunk.js",
+    "static/js/2.224596ae.chunk.js.map": "/Kaipuu/static/js/2.224596ae.chunk.js.map",
+    "index.html": "/Kaipuu/index.html",
+    "precache-manifest.beeba50e1ce66aa29aa202e3ad4d1a59.js": "/Kaipuu/precache-manifest.beeba50e1ce66aa29aa202e3ad4d1a59.js",
+    "service-worker.js": "/Kaipuu/service-worker.js",
+    "static/media/arrow-left.svg": "/Kaipuu/static/media/arrow-left.d3287b36.svg",
+    "static/media/arrow-right.svg": "/Kaipuu/static/media/arrow-right.ecede4c3.svg",
+    "static/media/css.png": "/Kaipuu/static/media/css.0e86e053.png",
+    "static/media/default-profile.jpg": "/Kaipuu/static/media/default-profile.174a9cab.jpg",
+    "static/media/github.svg": "/Kaipuu/static/media/github.9ebd7713.svg",
+    "static/media/html.png": "/Kaipuu/static/media/html.4da20680.png",
+    "static/media/intti-profile.jpg": "/Kaipuu/static/media/intti-profile.30550404.jpg",
+    "static/media/js.png": "/Kaipuu/static/media/js.b7bf3b31.png",
+    "static/media/kaipuu-text.png": "/Kaipuu/static/media/kaipuu-text.4d00392c.png",
+    "static/media/kosen.jpg": "/Kaipuu/static/media/kosen.84645cf9.jpg",
+    "static/media/lower-kanji.svg": "/Kaipuu/static/media/lower-kanji.f950b74c.svg",
+    "static/media/menu.svg": "/Kaipuu/static/media/menu.59652640.svg",
+    "static/media/profile.jpg": "/Kaipuu/static/media/profile.e72c3b98.jpg",
+    "static/media/react-native.png": "/Kaipuu/static/media/react-native.df2ed6b5.png",
+    "static/media/react.png": "/Kaipuu/static/media/react.ecbd9e75.png",
+    "static/media/rx.png": "/Kaipuu/static/media/rx.1d53ee6e.png",
+    "static/media/soundcloud.svg": "/Kaipuu/static/media/soundcloud.74e88ee3.svg",
+    "static/media/swift.png": "/Kaipuu/static/media/swift.811277d8.png",
+    "static/media/tonpei.jpg": "/Kaipuu/static/media/tonpei.3d0cb2d1.jpg",
+    "static/media/twitter.svg": "/Kaipuu/static/media/twitter.4e358f0f.svg",
+    "static/media/upper-kanji.svg": "/Kaipuu/static/media/upper-kanji.e7d1542e.svg",
+    "static/media/vapor.png": "/Kaipuu/static/media/vapor.32ff5308.png",
+    "static/media/vue.png": "/Kaipuu/static/media/vue.afa4adac.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f57a6a43.js",
+    "static/js/2.224596ae.chunk.js",
+    "static/js/main.0d1b3962.chunk.js"
+  ]
+}
