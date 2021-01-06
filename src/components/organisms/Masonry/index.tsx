@@ -6,6 +6,7 @@ import { Div } from '../../../types/enhance'
 
 import useEventListener from '../../hooks/useEventListener'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const fillCols = (children: React.ReactNode, cols: Array<any>): void => React.Children.forEach(children, (child, index) => cols && cols[index % cols.length]?.push(child))
 
 interface Props {
@@ -17,6 +18,7 @@ const Masonry: React.FC<Props> = ({ children, gap = 16, minWidth = 300 }) => {
   const ref = useRef<Div>(null)
   const [numCols, setNumCols] = useState(3)
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const cols: Array<any> = [...Array(numCols)].map(() => [])
 
   const resizeHandler = (): void => setNumCols(Math.ceil((ref?.current?.offsetWidth || 0) / minWidth))
