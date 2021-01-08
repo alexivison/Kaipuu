@@ -30,13 +30,14 @@ const routes: RouteMap = {
     path: '/work',
     component: Work,
     exact: true,
-  },
-  WorkDetail: {
-    icon: '作',
-    title: 'WORK',
-    path: '/work/:title',
-    component: WorkDetail,
-    sub: true,
+    subRoutes: {
+      WorkDetail: {
+        icon: '作',
+        title: 'WORK',
+        path: '/work/:title',
+        component: WorkDetail,
+      },
+    }
   },
 }
 

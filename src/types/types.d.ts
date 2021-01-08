@@ -1,13 +1,15 @@
 ///Global types
 declare type RouteMap = {
-  [key: string]: {
-    icon: string
-    title: string
-    path: string
-    component: React.FC
-    exact?: boolean
-    sub?: boolean
-  }
+  [key: string]: Route
+}
+
+declare type Route = {
+  icon: string
+  title: string
+  path: string
+  component: React.FC
+  exact?: boolean
+  subRoutes?: RouteMap
 }
 
 // PageData

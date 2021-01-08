@@ -25,7 +25,7 @@ const Sidebar: React.FC<Props> = ({ routes }) => {
   return (
     <Container style={useSpring({ left: isOpen ? '0vw' : '-15vw', opacity: isOpen ? 1 : 0 })}>
       <Nav>
-        {Object.values(routes).map(({ path, title, icon, sub }, index) => !sub && (
+        {Object.values(routes).map(({ path, title, icon }, index) => (
           <NavItem 
             key={index}
             icon={icon}

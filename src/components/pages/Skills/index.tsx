@@ -16,6 +16,8 @@ import {
 import Skill from '../../organisms/Skill'
 
 const Skills: React.FC = () => {
+  const isMobile = useDetectMobile()
+
   const [data, setData] = useState<SkillPageData[]>(baseData.filter((item) => item.category === 'web'))
   const [category, setCategory] = useState<SkillCategory>('web')
 
