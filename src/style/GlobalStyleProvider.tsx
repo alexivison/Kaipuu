@@ -3,9 +3,12 @@ import { createGlobalStyle, ThemedGlobalStyledClassProps } from 'styled-componen
 
 import { Theme } from './themes'
 
-const GlobalStyleProvider: React.FC = () => {
+const GlobalStyleProvider: React.FC = ({ children }) => {
   return (
-    <GlobalStyle />
+    <>
+      <GlobalStyle />
+      {children}
+    </>
   )
 }
 
@@ -69,12 +72,7 @@ const resetCss = `
 const GlobalStyle = createGlobalStyle`
   ${resetCss}
 
-  html {
-    overflow: hidden;
-  }
-
   body {
-    overflow: hidden;
     font-family: 'Hiragino Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;

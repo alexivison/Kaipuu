@@ -1,14 +1,14 @@
-import ReactLogo from '../img/skills/react.png'
-import ReactNativeLogo from '../img/skills/react-native.png'
-import VueLogo from '../img/skills/vue.png'
-import HTMLLogo from '../img/skills/html.png'
-import CSSLogo from '../img/skills/css.png'
-import JSLogo from '../img/skills/js.png'
-import SwiftLogo from '../img/skills/swift.png'
-import RxLogo from '../img/skills/rx.png'
-import VaporLogo from '../img/skills/vapor.png'
-import FigmaLogo from '../img/skills/figma.png'
-import SketchLogo from '../img/skills/sketch.png'
+import ReactLogo from '../img/react.png'
+import ReactNativeLogo from '../img/react-native.png'
+import VueLogo from '../img/vue.png'
+import HTMLLogo from '../img/html.png'
+import CSSLogo from '../img/css.png'
+import JSLogo from '../img/js.png'
+import SwiftLogo from '../img/swift.png'
+import RxLogo from '../img/rx.png'
+import VaporLogo from '../img/vapor.png'
+import FigmaLogo from '../img/figma.png'
+import SketchLogo from '../img/sketch.png'
 
 const pageData: SkillPageData[] = [
   { title: 'React', image: ReactLogo, category: 'web', level: 4 },
@@ -16,11 +16,11 @@ const pageData: SkillPageData[] = [
   { title: 'JavaScript', image: JSLogo, category: 'web', level: 3 },
   { title: 'HTML', image: HTMLLogo, category: 'web', level: 4 },
   { title: 'CSS', image: CSSLogo, category: 'web', level: 4 },
-  { title: 'React Native', image: ReactNativeLogo, category: 'native', level: 4 },
-  { title: 'Swift', image: SwiftLogo, category: 'native', level: 3 },
-  { title: 'RxSwift', image: RxLogo, category: 'native', level: 3 },
-  { title: 'Vapor', image: VaporLogo, category: 'native', level: 2 },
-  { title: 'Figma', image: FigmaLogo, category: 'design', level: 3 },
+  { title: 'React Native', image: ReactNativeLogo, category: 'native', level: 3 },
+  { title: 'Swift', image: SwiftLogo, category: 'native', level: 2 },
+  { title: 'RxSwift', image: RxLogo, category: 'native', level: 2 },
+  { title: 'Vapor', image: VaporLogo, category: 'native', level: 1 },
+  { title: 'Figma', image: FigmaLogo, category: 'design', level: 4 },
   { title: 'Sketch', image: SketchLogo, category: 'design', level: 2 },
 ]
 

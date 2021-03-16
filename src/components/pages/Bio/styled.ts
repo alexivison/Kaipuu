@@ -1,70 +1,94 @@
 import styled from 'styled-components'
-import { animated } from 'react-spring'
 
 import BaseText from '../../atoms/Text'
 
-export const Container = styled.div`
-  height: 100%;
-
-  ${({ theme }) => theme.isMobile  ? `
-    display: flex;
-    flex-direction: column-reverse;
-  ` : `
-    position: relative;
-    display: grid;
-    grid-gap: 48px;
-    grid-template-columns: repeat(2, calc(50% - (48px / 2)));
-  `}
-`
-
-export const LeftColumn = styled.div``
-
-export const RightColumn = styled(animated.div)`
-  position: absolute;
-
-  ${({ theme }) => theme.isMobile ? `
-    display: grid;
-    grid-template-rows: 1fr auto;
-    align-items: center;
-    padding: 56px 24px 24px;
-    height: 100%;
-    width: 100vw;
-  ` : `
-    right: 0;
-    top: 32px;
-    border: 4px solid ${theme.text};
-    padding: 24px 16px;
-    width: 50%;
-  `}
-`
-
-export const MobileTimelineNav = styled.div(() => `
-  z-index: 1;
+export const Container = styled.section(({ theme: { mediaQuery, ...theme } }) => `
   display: grid;
-  padding: 24px 16px;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
+  grid-gap: 24px;
+
+  background: ${theme.accent};
+
+  padding: 80px 20vw;
+
+  ${mediaQuery.small} {
+    padding: 24px;
+  }
 `)
 
-export const MobileTimelineNavItem = styled.div`
+export const HeaderWrapper = styled.div(({ theme }) => `
   display: grid;
-  justify-content: center;
-  // background-color: ${({ theme }) => theme.highlight};
-`
+  grid-template-columns: 1fr auto;
+`)
 
-export const MobileTimelineDate = styled(BaseText)(
-  ({ theme }) => `
-    color: ${theme.text};
-    margin-bottom: 8px;
-  `
-)
+export const Introduction = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  line-height: 1.5;
+  font-size: 24px;
 
-interface MobileTimelineNavIndicatorProps {
-  isActive: boolean
-}
-export const MobileTimelineNavIndicator = styled.div<MobileTimelineNavIndicatorProps>(
-  ({ theme, isActive }) => `
-    height: 4px;
-    background-color: ${isActive ? theme.text : 'inherit'};
-    transition: all .5s ease-in-out;
-  `
-)
+  ${mediaQuery.small} {
+    font-size: 16px;
+  }
+`)
+
+export const ContentWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  ${mediaQuery.small} {
+    flex-direction: column-reverse;
+  }
+`)
+
+export const SocialWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  z-index: 1;
+
+  font-size: 16px;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  ${mediaQuery.small} {
+    font-size: 14px;
+    text-align: center;
+
+    padding: 16px;
+
+    writing-mode: initial;
+    transform: none;
+  }
+`)
+
+export const SocialLink = styled.a(({ theme }) => `
+  color: ${theme.text};
+  font-weight: 500;
+
+  text-decoration: none;
+`)
+
+export const TimelineWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  width: 100%;
+
+  margin-left: 40px;
+
+  ${mediaQuery.small} {
+    margin-left: 0;
+  }
+`)
+
+export const Image = styled.img(({ theme: { mediaQuery, ...theme } }) => `
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 500px;
+  height: 500px;
+
+  opacity: 0.3;
+  object-fit: cover;
+
+  ${mediaQuery.small} {
+    display: none;
+  }
+`)

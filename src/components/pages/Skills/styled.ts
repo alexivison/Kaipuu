@@ -1,76 +1,88 @@
 import styled from 'styled-components'
-import { animated } from 'react-spring'
 
 import BaseText from '../../atoms/Text'
 
-export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
-  position: relative;
+export const Container = styled.section(({ theme: { mediaQuery, ...theme } }) => `
   display: grid;
-  align-self: end;
-  width: 80%;
-  height: 90%;
-  border: 4px solid ${theme.text};
-  border-bottom: none;
-  padding: 40px;
-  padding-right: 62px;
+  grid-auto-flow: row;
+  grid-gap: 24px;
 
-  ${mediaQuery.medium} {
-    border: none;
-    padding: 32px;
-    padding-right: inherit;
+  background-color: ${theme.background};
+
+  padding: 80px 20vw;
+
+  ${mediaQuery.small} {
+    padding: 24px;
   }
 `)
 
-export const CategorySwitch = styled.div(() => `
-  position: absolute;
-  right: -132px;
-  top: 32px;
-  display: grid;
-  grid-gap: 40px;
-`)
+export const Category = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  justify-self: center;
 
-export const Category = styled(BaseText)<{ isActive: boolean }>`
   font-size: 32px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  cursor: pointer;
-  padding: 8px 0;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ isActive, theme }) => isActive ? theme.text : theme.subText};
+  color: ${theme.subText};
+
+  transition: all .2s ease-in-out;
 
   &:before {
     content: "."
   }
 
-  &:hover {
-    color: ${({ theme }) => theme.text};
+  ${mediaQuery.small} {
+    justify-self: start;
+
+    font-size: 24px;
   }
-`
+`)
 
-export const SkillContainer = styled.div`
-  position: relative;
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`
-
-export const ScrollContainer = styled(animated.div)`
-  position: absolute;
+export const ScrollContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   display: grid;
   grid-gap: 32px;
   width: 100%;
 
-  ${({ theme }) => theme.isMobile && `
-    grid-gap: 24px;
-    padding: 0 24px 24px;
-  `}
-`
+  filter: opacity(0.7);
+  transition: all .2s ease-in-out;
 
-export const ListEndIndicator = styled.div`
-  justify-self: center;
-  width: 40%;
-  height: 3px;
-  background: ${({ theme }) => theme.subText};
-`
+  ${mediaQuery.small} {
+    grid-gap: 16px;
+  }
+`)
+
+export const SkillListWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 24px;
+
+  &:hover {
+    ${Category} {
+      color: ${theme.text};
+    }
+
+    ${ScrollContainer} {
+      filter: opacity(1);
+    }
+  }
+
+  ${mediaQuery.small} {
+    padding: 0;
+  }
+`)
+
+export const SkillContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 80px;
+  align-items: start;
+
+  padding: 40px 0;
+
+  ${mediaQuery.small} {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 40px;
+  }
+`)
+
+export const PageNumberContainer = styled.div(() => `
+  justify-self: end;
+`)

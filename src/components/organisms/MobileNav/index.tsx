@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react'
-import { useHistory } from 'react-router'
 import { useTransition } from 'react-spring'
 
 import { 
@@ -27,8 +26,6 @@ interface Props {
 const MobileNav: React.FC<Props> = ({ routes }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const { push } = useHistory()
-
   const transitions = useTransition(isOpen, null, {
     from: { position: 'absolute' as 'absolute', opacity: 0 },
     enter: { opacity: 1 },
@@ -45,7 +42,6 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
 
   const onClickMenuItem = useCallback((route) => {
     onCloseMenu()
-    push(route)
   }, [])
 
   return (

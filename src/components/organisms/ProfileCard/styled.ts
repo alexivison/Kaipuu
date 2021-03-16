@@ -11,7 +11,7 @@ export const ImageContainer = styled.div(({ theme: { mediaQuery } }) => `
   top: 50%;
   z-index: -1;
 
-  ${mediaQuery.medium} {
+  ${mediaQuery.small} {
 
   }
 
@@ -23,7 +23,7 @@ export const ImageContainer = styled.div(({ theme: { mediaQuery } }) => `
 export const TextContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   padding: 0px 16px;
 
-  ${mediaQuery.medium} {
+  ${mediaQuery.small} {
     padding: 16px 24px;
     border: 2px solid ${theme.text};
   }
@@ -34,7 +34,7 @@ export const ProfileImage = styled(BaseImage)(({ theme: { mediaQuery } }) => `
   height: 340px;
   filter: saturate(0.3);
 
-  ${mediaQuery.medium} {
+  ${mediaQuery.small} {
 
   }
 
@@ -62,7 +62,7 @@ export const Title = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
   background-color: ${theme.background};
   color: ${theme.text};
 
-  ${mediaQuery.medium} {
+  ${mediaQuery.small} {
     font-size: 32px;
   }
 
@@ -82,14 +82,14 @@ export const Text = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
   line-height: 2;
   color: ${theme.text};
 
-  ${mediaQuery.medium} {
+  ${mediaQuery.small} {
     font-size: 16px;
     line-height: 1.5;
   }
 `)
 
 export const Date = styled(BaseText)(({ theme: { mediaQuery } }) => `
-  ${mediaQuery.medium} {
+  ${mediaQuery.small} {
     display: none;
   }
 `)

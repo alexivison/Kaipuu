@@ -1,37 +1,52 @@
 import React from 'react'
 
 import { 
-  Container,  
-  Index,
-  ThumbnailBackground,
-  ThumbnailImage,
+  Container,
   CategoryContainer,
-  CategoryBackgroundContainer,
-  CategoryBackground,
   Category,
+  ThumbnailContainer,  
+  Image,
+  Index,
+  TextContainer,
+  Title,
+  Description,
+  ProjectContainer,
+  Project,
+  ProjectTitle,
+  ProjectPosition,
+  ProjectDescription,
 } from './styled'
 
 interface Props {
-  index: number
+  date: string
+  description: string
+  company: string
   thumbnail?: string
-  type: string
-  onClick?: () => void
+  projects: Project[]
 }
 
-const Produce: React.FC<Props> = ({ index, type, thumbnail, onClick }) => {
-  const indexToString = "." + ("00" + index).slice(-3)
-
+const Produce: React.FC<Props> = ({ company, description, date, thumbnail, projects }) => {
   return (
-    <Container onClick={onClick}>
-      <ThumbnailBackground />
-      <CategoryBackgroundContainer>
-        <CategoryBackground>{type}</CategoryBackground>
-      </CategoryBackgroundContainer>
+    <Container>
       <CategoryContainer>
-        <Category>{type}</Category>
+        <Category>{date}</Category>
+        <ThumbnailContainer>
+          <Image src={thumbnail} />
+        </ThumbnailContainer>
       </CategoryContainer>
-      <ThumbnailImage src={thumbnail} />
-      <Index>{indexToString}</Index>
+      <TextContainer>
+        <Title>{company}</Title>
+        <Description>{description}</Description>
+        <ProjectContainer>
+          {projects.map(({ title, position, description }) => (
+            <Project key={`project-${title}`}>
+              <ProjectTitle>{title}</ProjectTitle>
+              <ProjectPosition>{position}</ProjectPosition>
+              <ProjectDescription>{description}</ProjectDescription>
+            </Project>
+          ))}
+        </ProjectContainer>
+      </TextContainer>
     </Container>
   )
 }

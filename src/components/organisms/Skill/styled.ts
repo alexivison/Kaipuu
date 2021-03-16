@@ -10,11 +10,15 @@ export const Container = styled.div`
 `
 
 export const SkillIcon = styled(BaseImage).attrs({
-  size: 80,
+  size: 60,
 })`
   background-color: ${({ theme }) => theme.background};
-  filter: saturate(0.3);
+  filter: saturate(0.5);
   z-index: 1;
+
+  &:hover {
+    filter: saturate(1);
+  }
 `
 
 export const IndicatorContainer = styled.div`

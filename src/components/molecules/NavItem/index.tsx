@@ -33,7 +33,7 @@ const NavItem: React.FC<Props> = ({ path, icon, title, index, isActive }) => {
     <Container>
       <SubContainer isActive={isActive}>
         <Index>{indexToString}</Index>
-        <NavLink to={path}>
+        <NavLink>
           {icon && <Icon isActive={isActive}>{iconToString}</Icon>}
           <Title style={titleAnimation}>{title}</Title>
         </NavLink>

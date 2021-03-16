@@ -1,40 +1,25 @@
-import React, { useEffect } from 'react'
-import useSidebarContext from '../../hooks/useSidebarContext'
+import React from 'react'
 
 import { 
   Container,
   TextContainer,
   Title, 
-  SubTitleContainer,
+  TitleContainer,
   SubTitle,
-  Menu,
-  MenuItem,
+  Image,
  } from './styled'
 
 const Home: React.FC = () => {
-  const { openSidebar, closeSidebar } = useSidebarContext()
-
-  useEffect(() => {
-    closeSidebar()
-
-    return () => openSidebar()
-  }, [])
-
   return (
-    <Container>
+    <Container id="top">
       <TextContainer>
-        <Title>ALEKSI TUOMINEN</Title>
-        <SubTitleContainer>
-          <SubTitle>Web・iOS Engineer</SubTitle>
-          <SubTitle>UI・UX Designer</SubTitle>
-          <SubTitle>Music Enthusiast</SubTitle>
-        </SubTitleContainer>
+        <SubTitle>Aleksi Tuominen</SubTitle>
+        <TitleContainer>
+          <Title>development</Title>
+          <Title>design</Title>
+        </TitleContainer>
       </TextContainer>
-      <Menu>
-        <MenuItem to="/bio">.01 BIO</MenuItem>
-        <MenuItem to="/skills">.02 SKILLS</MenuItem>
-        <MenuItem to="/work">.03 WORK</MenuItem>
-      </Menu>
+      <Image />
     </Container>
   )
 }

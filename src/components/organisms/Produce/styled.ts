@@ -1,89 +1,155 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import BaseText from '../../atoms/Text'
-import SidewaysContainer from '../../molecules/SidewaysContainer'
 
-export const Container = styled.div<{ src?: string }>`
-  position: relative;
+export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   display: grid;
-  align-items: end;
-  width: 450px;
-  height: 450px;
-  filter: saturate(0.3);
-  cursor: pointer;
-  padding: 16px;
+  grid-template-columns: auto 1fr;
+  grid-gap: 24px;
 
-  &:hover {
-    filter: saturate(1.0);
+  ${mediaQuery.small} {
+    grid-template-columns: none;
+    grid-template-rows: auto 1fr;
+    grid-gap: 16px;
   }
+`)
 
-  &:before {
+export const CategoryContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: flex;
+  flex-direction: row;
 
+  ${mediaQuery.small} {
+    flex-direction: column-reverse;
   }
+`)
 
-  &:hover: before {
-
-  }
-`
-
-export const ThumbnailBackground = styled.div`
+export const ThumbnailContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   position: relative;
-  width: 100%; 
+
+  width: 200px;
+  height: 200px;
+
+  margin-left: 24px;
+
+  ${mediaQuery.small} {
+    width: auto;
+
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
+`)
+
+export const Image = styled.img`
+  width: 100%;
   height: 100%;
-  border: 2px solid ${({ theme }) => theme.text};
+
+  object-fit: cover;
 `
 
-export const ThumbnailImage = styled.div<{ src?: string }>`
+export const Index = styled(BaseText)(({ theme }) => `
   position: absolute;
-  justify-self: center;
-  align-self: center;
-  width: calc(100% - 32px - 4px); 
-  height: calc(100% - 32px - 4px);
-  background-image: url(${({ src }) => src});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-`
+  right: 16px;
+  top: 16px;
 
-export const Index = styled(BaseText)`
-  position: absolute;
-  top: 28px;
-  right: 28px;
+  color: ${theme.background};
+`)
+
+export const Category = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
   font-size: 24px;
-  color: ${({ theme }) => theme.text};
-`
+  text-align: end;
 
-export const CategoryContainer = styled(SidewaysContainer)`
-  position: fixed;
-  left: 0px;
-  bottom: 24px;
-  padding: 16px 0;
-  z-index: 1;
-`
+  color: ${theme.subText};
 
-export const Category = styled(BaseText)`
-  position: relative;
-  width: fit-content;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 24px;
-  color: ${({ theme }) => theme.text};
-  padding: 0 8px;
-  text-shadow: 0px 0px 8px ${({ theme }) => theme.background};
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 
-  &:before {
-    content: ".";
+  ${mediaQuery.small} {
+    font-size: 16px;
+    text-align: start;
+
+    writing-mode: inherit;
+    transform: none;
   }
+`)
+
+export const TextContainer = styled.div(({ theme }) => `
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: ${theme.subText};
+    left: 100%;
+    top: calc(8px + 2px);
+  }
+`)
+
+export const Title = styled.h3(({ theme: { mediaQuery, ...theme } }) => `
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  padding-bottom: 16px;
+
+  color: ${theme.text};
+  font-size: 32px;
+  font-weight: 500;
+  font-weight: 500;
+  letter-spacing: 2px;
+
+  &:after {
+    content: "";
+    flex: 1;
+    display: block;
+    height: 2px;
+    background-color: ${theme.subText};
+    margin-top: calc(8px + 2px);
+    margin-left: 16px;
+  }
+
+  ${mediaQuery.small} {
+    font-size: 24px;
+  }
+`)
+
+export const Description = styled(BaseText)`
+  line-height: 1.5;
 `
 
-export const CategoryBackgroundContainer = styled(SidewaysContainer)`
-  position: fixed;
-  left: 0px;
-  bottom: 24px;
-  padding: 16px 0;
-`
+export const ProjectContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 32px;
 
-export const CategoryBackground = styled(Category)`
-  background: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.background};
-`
+  ${mediaQuery.small} {
+    grid-gap: 24px;
+  }
+`)
+
+export const Project = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-gap: 8px;
+  grid-template-rows: repeat(3, auto);
+`)
+
+export const ProjectTitle = styled.h4(({ theme: { mediaQuery, ...theme } }) => `
+  font-size: 24px;
+  font-weight: 300;
+  color: ${theme.text};
+`)
+
+export const ProjectPosition = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  color: ${theme.subText};
+`)
+
+export const ProjectDescription = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  line-height: 1.5;
+  padding: 8px 0;
+`)

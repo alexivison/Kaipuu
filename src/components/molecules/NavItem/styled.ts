@@ -10,7 +10,7 @@ export const Container = styled.div`
   grid-gap: 8px;
 `
 
-export const SubContainer = styled(animated.div)<{ isActive: boolean }>`
+export const SubContainer = styled.div<{ isActive: boolean }>`
   display: grid;
   grid-gap: 4px;
   grid-auto-flow: column;
@@ -31,7 +31,7 @@ export const Index = styled(Text).attrs({
   font-weight: 400;
 `
 
-export const NavLink = styled(Link)`
+export const NavLink = styled.div`
   position: relative;
   line-height: 1;
 `

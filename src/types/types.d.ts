@@ -17,11 +17,15 @@ declare type HomePageData = {
 
 }
 
-declare type BioPageData = {
+declare type TimelineData = {
   date: string
-  image: string
   title: string
   text: string
+}
+
+declare type BioPageData = {
+  description: string
+  timeline: TimelineData[]
 }
 
 declare type SkillPageData = {
@@ -35,12 +39,15 @@ declare type SkillCategory = 'web' | 'native' | 'design'
 declare type SkillProgressLevel = 0 | 1 | 2 | 3 | 4
 
 declare type WorkPageData = {
-  type: WorkType
-  title: string
+  date: string
+  company: string
   description: string
-  figmaFileUrl?: string
   thumbnail: string
-  images: string[]
+  projects: Project[]
 }
 
-declare type WorkType = 'design' | 'music' | 'development' | 'post'
+declare type Project = {
+  title: string
+  position: string
+  description: string
+}

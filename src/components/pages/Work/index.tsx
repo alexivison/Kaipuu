@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import React, { useCallback } from 'react'
-import { useHistory } from 'react-router'
 
 import data from '../../../res/pageData/work'
 import { 
   Container,
+  SectionHeaderWrapper,
   QuoteContainer,
   Quote,
   WorkContainer,
@@ -13,27 +13,23 @@ import {
 } from './styled'
 
 import Produce from '../../organisms/Produce'
+import SectionHeader from '../../molecules/SectionHeader'
+import PageNumber from '../../atoms/PageNumber'
 
 const Work: React.FC = () => {
-  const { push } = useHistory()
-
-  const handleOnProduceClick = useCallback((title: string) => push(`/work/${title}`), [push])
-
   return (
     <Container>
-      <QuoteContainer>
-        <Quote quotee="Salvador Dali">Have no fear of perfection -- you’ll never reach it.</Quote>
-      </QuoteContainer>
+      <SectionHeaderWrapper>
+        <SectionHeader title="work" subTitle="作" />
+        <PageNumber>3</PageNumber>
+      </SectionHeaderWrapper>
       <WorkContainer>
-        <Fade />
         <ScrollContainer>
-          {data.map(({ type, title, thumbnail }, index) => (
-            <Produce 
-              key={title}
-              type={type}
-              index={index}
-              thumbnail={thumbnail}
-              onClick={() => handleOnProduceClick(title)}
+          {data.map(({ company, ...rest }) => (
+            <Produce
+              key={`work-${company}`}
+              company={company}
+              {...rest}
             />
           ))}
         </ScrollContainer>
