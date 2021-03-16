@@ -10,16 +10,16 @@ import Skills from './components/pages/Skills'
 
 const App: React.FC = () => {
   return (
-    <GlobalStyleProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <GlobalStyleProvider>
         <>
           <Home />
           <Bio />
           <Skills />
           <Work />
         </>
-      </ThemeProvider>
-    </GlobalStyleProvider>
+      </GlobalStyleProvider>
+    </ThemeProvider>
   )
 }
 
