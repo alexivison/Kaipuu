@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import BaseImage from '../../atoms/Image'
+import BaseText from '../../atoms/Text'
 
 export const Container = styled.div`
   display: grid;
@@ -9,15 +10,15 @@ export const Container = styled.div`
 `
 
 export const SkillIcon = styled(BaseImage).attrs({
-  size: 100,
+  size: 60,
 })`
   background-color: ${({ theme }) => theme.background};
-  border: 4px solid ${({ theme }) => theme.highlight};
+  filter: saturate(0.5);
   z-index: 1;
 
-  ${({ theme }) => !theme.isMobile && `
-    box-shadow: 0px 0px 16px 2px ${theme.highlight};
-  `}
+  &:hover {
+    filter: saturate(1);
+  }
 `
 
 export const IndicatorContainer = styled.div`
@@ -26,4 +27,10 @@ export const IndicatorContainer = styled.div`
   grid-auto-rows: max-content;
   align-content: center;
   color: ${({ theme }) => theme.text};
+`
+
+export const Title = styled(BaseText)`
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: ${({ theme }) => theme.subText};
 `

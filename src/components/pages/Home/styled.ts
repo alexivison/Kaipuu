@@ -1,61 +1,100 @@
-import styled, { keyframes } from 'styled-components'
-import { animated } from 'react-spring'
+import styled from 'styled-components'
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`
+import Text from '../../atoms/Text'
+import TopPicture from '../../../res/img/top.png'
 
-export const LogoAnimation = keyframes`
-  0% { filter: saturate(1); }
-  25% { filter: saturate(0.5); }
-  50% { filter: saturate(1); }
-  75% { filter: saturate(1.5); }
-  100% { filter: saturate(1); }
-`
 
-export const Logo = styled.div`
+export const Container = styled.section(({ theme: { mediaQuery, ...theme } }) => `
   display: grid;
-  grid-gap: 16px;
-  justify-self: center;
-  align-self: center;
-  justify-items: center;
-  padding: 16px;
-`
+  grid-template-columns: 1fr 45vw;
+  height: 100vh;
+  background-color: ${theme.background};
 
-export const Image = styled(animated.div)<{ src: string }>`
-  mask-image: ${({ src }) => `url("${src}");`}
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: contain;
-`
+  ${mediaQuery.small} {
+    display: flex;
+    align-items: flex-end;
 
-export const Upper = styled(Image)`
-  width: 25vh;
-  height: 25vh;
-  background-color: ${({ theme }) => theme.accent};
-  animation: ${LogoAnimation} 8s infinite;
-`
-
-export const Center = styled(Image)`
-  width: 30vh;
-  height: 6vh;
-  background-color: ${({ theme }) => theme.text};
-  cursor: pointer;
-  transition: all .3s ease-in-out;
-
-  &:hover {
-    width: 34vh;
-    height: 10vh;
+    background-image: url(${TopPicture});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-`
+`)
 
-export const Lower = styled(Image)`
-  width: 25vh;
-  height: 25vh;
-  background-color: ${({ theme }) => theme.accent};
-  animation: ${LogoAnimation} 11s infinite;
-`
+export const TextContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-gap: 40px;
+  align-content: center;
+  padding: 80px;
+
+  ${mediaQuery.small} {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0px;
+
+    width: 100%;
+
+    padding: 24px 0px;
+  }
+`)
+
+export const TitleContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  justify-content: end;
+
+  padding: 40px 0;
+  border: 4px solid ${theme.text};
+
+  transform: translateX(calc(-80px - 4px)); // The padding of the parent + border-width
+
+  ${mediaQuery.small} {
+    padding: 24px 0;
+
+    border: none;
+
+    transform: none;
+  }
+`)
+
+export const Title = styled(Text)(({ theme: { mediaQuery, ...theme } }) => `
+  justify-self: end;
+
+  font-size: 64px;
+  letter-spacing: 8px;
+  padding: 24px 0;
+  background-color: ${theme.background};
+  color: ${theme.text};
+
+  transform: translateX(calc(80px + 4px)); // Reverse the transform of the parent
+
+  ${mediaQuery.small} {
+    color: ${theme.subText};
+    font-size: 24px;
+
+    padding: 16px;
+
+    transform: none;
+  }
+`)
+
+export const SubTitle = styled(Text)(({ theme: { mediaQuery, ...theme } }) => `
+  font-size: 32px;
+  color: ${theme.subText};
+
+  ${mediaQuery.small} {
+    font-size: 24px;
+    color: ${theme.text};
+
+    padding: 0 24px;
+  }
+`)
+
+export const Image = styled.div(({ theme: { mediaQuery } }) => `
+  background-image: url(${TopPicture});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  ${mediaQuery.small} {
+    display: none;
+  }
+`)

@@ -23,14 +23,13 @@ const Image: React.FC<Props> = ({ children, ...props }) => {
 Image.defaultProps = {
   size: 100,
   mask: false,
-  rounded: true
+  rounded: false
 }
 
 const Container = styled.div<Props>`
   width: ${({ size, width }) => size || width}px;
   height: ${({ size, height }) => size || height}px;
   border-radius: ${({ rounded }) => rounded ? '50%' : 'initial'};
-  background-color: ${({ theme }) => theme.text};
 
   ${({ mask, src }) => mask 
     ? css`

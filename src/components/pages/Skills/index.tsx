@@ -1,33 +1,55 @@
-import React from 'react'
-import { animated, useTrail } from 'react-spring'
+import React, { useState, useEffect } from 'react'
+import { animated, useTrail, useTransition } from 'react-spring'
 
-import data from './data'
-import { Container } from './styled'
+import data  from '../../../res/pageData/skills'
+import { 
+  Container,
+  SkillListWrapper,
+  Category,
+  SkillContainer,
+  ScrollContainer,
+  PageNumberContainer,
+} from './styled'
 
 import Skill from '../../organisms/Skill'
+import SectionHeader from '../../molecules/SectionHeader'
+import PageNumber from '../../atoms/PageNumber'
 
 const Skills: React.FC = () => {
-
-  const trail = useTrail(data.length, {
-    config: { mass: 5, tension: 2500, friction: 200 },
-    from: { opacity: 0, transform: 'translate3d(0, -50px, 0)' },
-    to: { opacity: 1, transform: 'translate3d(0, 0px, 0)' },
-  })
-
   return (
     <Container>
-      {trail.map((props, index) => (
-        <animated.div key={index} style={props}>
-          <Skill image={data[index].image} level={data[index].level} testLevel={data[index].testLevel} />
-        </animated.div>
-      ))}
+      <SectionHeader title="skills" subTitle="技" />
+      <SkillContainer>
+        <SkillListWrapper>
+          <Category>web</Category>
+          <ScrollContainer>
+            {data.filter(({ category }) => category === 'web').map((item) => (
+              <Skill key={item.title} image={item.image} level={item.level} />
+            ))}
+          </ScrollContainer>
+        </SkillListWrapper>
+        <SkillListWrapper>
+          <Category>native</Category>
+          <ScrollContainer>
+            {data.filter(({ category }) => category === 'native').map((item) => (
+              <Skill key={item.title} image={item.image} level={item.level} />
+            ))}
+          </ScrollContainer>
+        </SkillListWrapper>
+        <SkillListWrapper>
+          <Category>design</Category>
+          <ScrollContainer>
+            {data.filter(({ category }) => category === 'design').map((item) => (
+              <Skill key={item.title} image={item.image} level={item.level} />
+            ))}
+          </ScrollContainer>
+        </SkillListWrapper>
+      </SkillContainer>
+      <PageNumberContainer>
+        <PageNumber>2</PageNumber>
+      </PageNumberContainer>
     </Container>
   )
-}
-
-Skills.header = {
-  title: 'スキル',
-  subTitle: 'こんだけ書けるぜ'
 }
 
 export default Skills

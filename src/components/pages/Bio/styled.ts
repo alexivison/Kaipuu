@@ -1,83 +1,94 @@
 import styled from 'styled-components'
-import { animated } from 'react-spring'
 
-import Image from '../../atoms/Image'
+import BaseText from '../../atoms/Text'
 
-import ArrowRight from '../../../res/icon/arrow-right.svg'
-import ArrowLeft from '../../../res/icon/arrow-left.svg'
+export const Container = styled.section(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 24px;
 
-export const Container = styled.div`
-  height: 100%;
+  background: ${theme.accent};
 
-  ${({ theme }) => theme.isMobile  ? `
-    display: flex;
+  padding: 80px 20vw;
+
+  ${mediaQuery.small} {
+    padding: 24px;
+  }
+`)
+
+export const HeaderWrapper = styled.div(({ theme }) => `
+  display: grid;
+  grid-template-columns: 1fr auto;
+`)
+
+export const Introduction = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  line-height: 1.5;
+  font-size: 24px;
+
+  ${mediaQuery.small} {
+    font-size: 16px;
+  }
+`)
+
+export const ContentWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  ${mediaQuery.small} {
     flex-direction: column-reverse;
-  ` : `
-    position: relative;
-    display: grid;
-    grid-gap: 48px;
-    grid-template-columns: repeat(2, calc(50% - (48px / 2)));
-  `}
-`
+  }
+`)
 
-export const LeftColumn = styled.div``
+export const SocialWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  z-index: 1;
 
-export const RightColumn = styled(animated.div)`
+  font-size: 16px;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  ${mediaQuery.small} {
+    font-size: 14px;
+    text-align: center;
+
+    padding: 16px;
+
+    writing-mode: initial;
+    transform: none;
+  }
+`)
+
+export const SocialLink = styled.a(({ theme }) => `
+  color: ${theme.text};
+  font-weight: 500;
+
+  text-decoration: none;
+`)
+
+export const TimelineWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  width: 100%;
+
+  margin-left: 40px;
+
+  ${mediaQuery.small} {
+    margin-left: 0;
+  }
+`)
+
+export const Image = styled.img(({ theme: { mediaQuery, ...theme } }) => `
   position: absolute;
+  top: 0;
+  right: 0;
 
-  ${({ theme }) => theme.isMobile ? `
-    display: grid;
-    grid-template-rows: 1fr auto;
-    align-items: center;
-    padding: 56px 24px 24px;
-    height: 100%;
-    width: 100vw;
-  ` : `
-    right: 0;
-    top: 0;
-    bottom: 0;
-    border-radius: 8px;
-    padding: 24px 16px;
-    box-shadow: 0px 0px 16px 2px ${theme.highlight};
-    width: calc(50% - (48px / 2));
-    background: linear-gradient(75deg, ${theme.background} 0%, ${theme.highlight} 100%);
-  `}
-`
+  width: 500px;
+  height: 500px;
 
-export const HogeContainer = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-`
+  opacity: 0.3;
+  object-fit: cover;
 
-export const NextButton = styled(Image).attrs({
-  mask: true,
-  size: 48,
-  src: ArrowRight,
-})`
-  justify-self: end;
-  background-color: ${({ theme }) => theme.accent};
-`
-
-export const BackButton = styled(Image).attrs({
-  mask: true,
-  size: 48,
-  src: ArrowLeft,
-})`
-  justify-self: start;
-  background-color: ${({ theme }) => theme.accent};
-`
-
-export const Huuga = styled.div<{ stages: number }>`
-  display: grid;
-  grid-gap: 8px;
-  grid-template-columns: repeat(${({ stages }) => stages}, 1fr);
-  width: 100vw;
-  background-color: ${({ theme }) => theme.highlight};
-`
-
-export const InnerHuuga = styled.div<{ stage: number }>`
-  grid-column: ${({ stage }) => stage};
-  height: 8px;
-  background-color: ${({ theme }) => theme.accent};
-  transition: all .5s ease-in-out;
-`
+  ${mediaQuery.small} {
+    display: none;
+  }
+`)

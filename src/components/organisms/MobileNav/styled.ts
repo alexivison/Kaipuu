@@ -1,11 +1,8 @@
 import styled from 'styled-components'
 import { animated } from 'react-spring'
 
+import BaseText from '../../atoms/Text'
 import ExternalLink from '../../atoms/ExternalLink'
-
-import TwitterLogo from '../../../res/img/twitter.svg'
-import SoundcloudLogo from '../../../res/img/soundcloud.svg'
-import GithubLogo from '../../../res/img/github.svg'
 
 export const Container = styled.div`
   position: relative;
@@ -23,6 +20,7 @@ export const LeftButton = styled.div``
 export const RightButton = styled.div``
 
 export const Menu = styled(animated.div)`
+  z-index: 100;
   position: absolute;
   top: 0;
   display: grid;
@@ -30,7 +28,6 @@ export const Menu = styled(animated.div)`
   grid-template-rows: auto 1fr auto;
   padding: 16px;
   padding-bottom: 32px;
-  justify-items: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -45,11 +42,16 @@ export const MenuHeader = styled.div`
 
 export const MenuContent = styled.div`
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 32px;
   grid-auto-rows: min-content;
+  justify-self: start;
   font-size: 24px;
-  justify-items: center;
+  margin: 0 24px;
 `
+
+export const MenuItem = styled(BaseText)(() => `
+
+`)
 
 export const MenuFooter = styled.div`
   display: grid;
@@ -57,35 +59,14 @@ export const MenuFooter = styled.div`
   grid-auto-flow: column;
 `
 
-export const Icon = styled(ExternalLink)<{ src: string }>`
-  background-image: ${({ src }) => `url("${src}");`}
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.text};
-  transition: all .2s ease-in-out;
+export const Twitter = styled(ExternalLink).attrs({ to: 'https://twitter.com/DJAlexIvison' })`
+
 `
 
-export const Twitter = styled(Icon).attrs({ src: TwitterLogo, to: 'https://twitter.com/DJAlexIvison' })`
-  &:hover {
-    box-shadow: 0px 0px 0px 8px #1CA1F230;
-    background-color: #1CA1F2;
-  }
+export const Soundcloud = styled(ExternalLink).attrs({ to: 'https://soundcloud.com/alex_ivison' })`
+
 `
 
-export const Soundcloud = styled(Icon).attrs({ src: SoundcloudLogo, to: 'https://soundcloud.com/alex_ivison' })`
-  &:hover {
-    box-shadow: 0px 0px 0px 8px #ff550030;
-    background-color: #FF5500;
-  }
-`
+export const Github = styled(ExternalLink).attrs({ to: 'https://github.com/alexivison' })`
 
-export const Github = styled(Icon).attrs({ src: GithubLogo, to: 'https://github.com/alexivison' })`
-  &:hover {
-    box-shadow: 0px 0px 0px 8px #00000030;
-    background-color: white;
-  }
 `

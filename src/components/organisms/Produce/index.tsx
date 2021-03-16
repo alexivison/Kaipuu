@@ -1,22 +1,52 @@
 import React from 'react'
 
-import { Container, TextWrapper, Title, Date, Description } from './styled'
+import { 
+  Container,
+  CategoryContainer,
+  Category,
+  ThumbnailContainer,  
+  Image,
+  Index,
+  TextContainer,
+  Title,
+  Description,
+  ProjectContainer,
+  Project,
+  ProjectTitle,
+  ProjectPosition,
+  ProjectDescription,
+} from './styled'
 
 interface Props {
-  image?: string
-  title: string
   date: string
-  description?: string
+  description: string
+  company: string
+  thumbnail?: string
+  projects: Project[]
 }
 
-const Produce: React.FC<Props> = ({ image, title, date, description }) => {
+const Produce: React.FC<Props> = ({ company, description, date, thumbnail, projects }) => {
   return (
-    <Container src={image}>
-      <TextWrapper>
-        <Title>{title}</Title>
-        <Date>{date}</Date>
-        {description && <Description>{description}</Description>}
-      </TextWrapper>
+    <Container>
+      <CategoryContainer>
+        <Category>{date}</Category>
+        <ThumbnailContainer>
+          <Image src={thumbnail} />
+        </ThumbnailContainer>
+      </CategoryContainer>
+      <TextContainer>
+        <Title>{company}</Title>
+        <Description>{description}</Description>
+        <ProjectContainer>
+          {projects.map(({ title, position, description }) => (
+            <Project key={`project-${title}`}>
+              <ProjectTitle>{title}</ProjectTitle>
+              <ProjectPosition>{position}</ProjectPosition>
+              <ProjectDescription>{description}</ProjectDescription>
+            </Project>
+          ))}
+        </ProjectContainer>
+      </TextContainer>
     </Container>
   )
 }

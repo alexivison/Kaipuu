@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react'
-import { useHistory } from 'react-router'
 import { useTransition } from 'react-spring'
 
 import { 
   Container, 
   LeftButton, 
-  Menu, 
+  Menu,
+  MenuItem,
   MenuContent,
   MenuHeader,
   MenuFooter,
@@ -16,7 +16,6 @@ import {
 
 import Image from '../../atoms/Image'
 
-import { RouteMap } from '../../../routes'
 import MenuIcon from '../../../res/icon/menu.svg'
 
 interface Props {
@@ -26,8 +25,6 @@ interface Props {
 
 const MobileNav: React.FC<Props> = ({ routes }) => {
   const [isOpen, setIsOpen] = useState(false)
-
-  const { push } = useHistory()
 
   const transitions = useTransition(isOpen, null, {
     from: { position: 'absolute' as 'absolute', opacity: 0 },
@@ -45,14 +42,13 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
 
   const onClickMenuItem = useCallback((route) => {
     onCloseMenu()
-    push(route)
   }, [])
 
   return (
     <>
       <Container>
         <LeftButton onClick={onOpenMenu}>
-          <Image mask={true} size={48} src={MenuIcon} />
+          <Image size={48} src={MenuIcon} />
         </LeftButton>
       </Container>
       {transitions.map(({ item, key, props }) => item && (
@@ -60,13 +56,15 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
           <MenuHeader></MenuHeader>
           <MenuContent>
             {Object.values(routes).map((route, index) => (
-              <div key={index} onClick={() => onClickMenuItem(route.path)}>{route.title}</div>
+              <MenuItem key={index} onClick={() => onClickMenuItem(route.path)}>
+                {`.0${index} ${route.title}`}
+              </MenuItem>
             ))}
           </MenuContent>
           <MenuFooter>
-            <Github />
-            <Twitter />
-            <Soundcloud />
+            <Github>Github</Github>
+            <Twitter>Twitter</Twitter>
+            <Soundcloud>Soundcloud</Soundcloud>
           </MenuFooter>
         </Menu>
       ))}

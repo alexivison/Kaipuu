@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+import { ReactProps } from '../../types/enhance'
+
+interface Props extends ReactProps {
   children?: string
-  sub?: boolean
-  size?: number
-  lineHeight?: number
-  className?: string
+  className?: string,
 }
 
 const Text: React.FC<Props> = ({ children, ...props }) => {
@@ -17,18 +16,12 @@ const Text: React.FC<Props> = ({ children, ...props }) => {
   )
 }
 
-Text.defaultProps = {
-  sub: false,
-  size: 16,
-  lineHeight: 1,
-}
-
-const Container = styled.div<Omit<Props, 'children'>>`
-  color: ${({ theme, sub }) => sub ? theme.subText : theme.text};
-  font-size: ${({ size }) => size}px;
-  font-family: 'PT Sans', sans-serif;
-  line-height: ${({ lineHeight }) => lineHeight};
+const Container = styled.p`
   user-select: none;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 300;
+  color: ${({ theme }) => theme.text};
 `
 
 export default Text

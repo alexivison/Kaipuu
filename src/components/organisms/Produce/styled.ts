@@ -1,74 +1,155 @@
-import styled from 'styled-components'
-
-import DefaultImage from '../../../res/img/default-profile.jpg'
+import styled, { css } from 'styled-components'
 
 import BaseText from '../../atoms/Text'
 
-export const Container = styled.div<{ src?: string }>`
-  position: relative;
+export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   display: grid;
-  align-items: end;
-  background-image: url(${({ src }) => src || DefaultImage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 30vh;
-  max-height: 250px;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0px 0px 16px 2px ${({ theme }) => theme.highlight};
-  transition: all .2s ease-in-out;
+  grid-template-columns: auto 1fr;
+  grid-gap: 24px;
 
-  &:hover {
-    box-shadow: 0px 0px 8px 1px ${({ theme }) => theme.highlight};
+  ${mediaQuery.small} {
+    grid-template-columns: none;
+    grid-template-rows: auto 1fr;
+    grid-gap: 16px;
   }
+`)
 
-  &:before {
+export const CategoryContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: flex;
+  flex-direction: row;
+
+  ${mediaQuery.small} {
+    flex-direction: column-reverse;
+  }
+`)
+
+export const ThumbnailContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  position: relative;
+
+  width: 200px;
+  height: 200px;
+
+  margin-left: 24px;
+
+  ${mediaQuery.small} {
+    width: auto;
+
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
+`)
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+`
+
+export const Index = styled(BaseText)(({ theme }) => `
+  position: absolute;
+  right: 16px;
+  top: 16px;
+
+  color: ${theme.background};
+`)
+
+export const Category = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  font-size: 24px;
+  text-align: end;
+
+  color: ${theme.subText};
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  ${mediaQuery.small} {
+    font-size: 16px;
+    text-align: start;
+
+    writing-mode: inherit;
+    transform: none;
+  }
+`)
+
+export const TextContainer = styled.div(({ theme }) => `
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  &:after {
     content: "";
+    display: block;
     position: absolute;
+    height: 2px;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    transition: all .2s ease-in-out;
-    backdrop-filter: blur(2px) grayscale(0.5);
+    background-color: ${theme.subText};
+    left: 100%;
+    top: calc(8px + 2px);
   }
+`)
 
-  &:hover: before {
-    backdrop-filter: blur(0px) grayscale(0);
-  }
-`
-
-export const TextWrapper = styled.div`
+export const Title = styled.h3(({ theme: { mediaQuery, ...theme } }) => `
   position: relative;
-  display: grid;
-  grid-gap: 4px;
 
-  &:before {
+  display: flex;
+  flex-direction: row;
+
+  padding-bottom: 16px;
+
+  color: ${theme.text};
+  font-size: 32px;
+  font-weight: 500;
+  font-weight: 500;
+  letter-spacing: 2px;
+
+  &:after {
     content: "";
-    position: absolute;
-    height: 110%;
-    left: -16px;
-    right: -16px;
-    bottom: -17px;
-    border-radius: 8px;
-    background: ${({ theme }) => theme.highlight};
+    flex: 1;
+    display: block;
+    height: 2px;
+    background-color: ${theme.subText};
+    margin-top: calc(8px + 2px);
+    margin-left: 16px;
   }
+
+  ${mediaQuery.small} {
+    font-size: 24px;
+  }
+`)
+
+export const Description = styled(BaseText)`
+  line-height: 1.5;
 `
 
-export const Title = styled(BaseText).attrs({
-  size: 24,
-})`
-  z-index: 1;
-`
+export const ProjectContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 32px;
 
-export const Date = styled(BaseText).attrs({
-  size: 12,
-  sub: true,
-})`
-  z-index: 1;
-`
+  ${mediaQuery.small} {
+    grid-gap: 24px;
+  }
+`)
 
-export const Description = styled(BaseText).attrs({ })`
-  z-index: 1;
-`
+export const Project = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+  display: grid;
+  grid-gap: 8px;
+  grid-template-rows: repeat(3, auto);
+`)
+
+export const ProjectTitle = styled.h4(({ theme: { mediaQuery, ...theme } }) => `
+  font-size: 24px;
+  font-weight: 300;
+  color: ${theme.text};
+`)
+
+export const ProjectPosition = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  color: ${theme.subText};
+`)
+
+export const ProjectDescription = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+  line-height: 1.5;
+  padding: 8px 0;
+`)
