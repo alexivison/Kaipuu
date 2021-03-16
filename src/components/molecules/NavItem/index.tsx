@@ -19,7 +19,7 @@ interface Props {
   isActive: boolean
 }
 
-const NavItem: React.FC<Props> = ({ path, icon, title, index, isActive }) => {
+const NavItem: React.FC<Props> = ({ icon, title, index, isActive }) => {
   const indexToString = "." + ("0" + index).slice(-2)
   const iconToString = icon + "・"
 

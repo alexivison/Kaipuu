@@ -6,7 +6,6 @@ import {
   Category,
   ThumbnailContainer,  
   Image,
-  Index,
   TextContainer,
   Title,
   Description,

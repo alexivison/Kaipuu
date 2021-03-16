@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import BaseImage from '../../atoms/Image'
 import BaseText from '../../atoms/Text'
 
 export const Container = styled.div`
@@ -9,9 +8,10 @@ export const Container = styled.div`
   grid-template-columns: auto 1fr;
 `
 
-export const SkillIcon = styled(BaseImage).attrs({
-  size: 60,
-})`
+export const SkillIcon = styled.img`
+  width: 60px;
+  height: 60px;
+
   background-color: ${({ theme }) => theme.background};
   filter: saturate(0.5);
   z-index: 1;

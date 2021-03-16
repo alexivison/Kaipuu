@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import BaseText from '../../atoms/Text'
 
-export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const Container = styled.div(({ theme: { mediaQuery } }) => `
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 24px;
@@ -14,7 +14,7 @@ export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   }
 `)
 
-export const CategoryContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const CategoryContainer = styled.div(({ theme: { mediaQuery } }) => `
   display: flex;
   flex-direction: row;
 
@@ -23,7 +23,7 @@ export const CategoryContainer = styled.div(({ theme: { mediaQuery, ...theme } }
   }
 `)
 
-export const ThumbnailContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const ThumbnailContainer = styled.div(({ theme: { mediaQuery } }) => `
   position: relative;
 
   width: 200px;
@@ -123,7 +123,7 @@ export const Description = styled(BaseText)`
   line-height: 1.5;
 `
 
-export const ProjectContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const ProjectContainer = styled.div(({ theme: { mediaQuery } }) => `
   display: grid;
   grid-auto-flow: row;
   grid-gap: 32px;
@@ -133,23 +133,23 @@ export const ProjectContainer = styled.div(({ theme: { mediaQuery, ...theme } })
   }
 `)
 
-export const Project = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const Project = styled.div(() => `
   display: grid;
   grid-gap: 8px;
   grid-template-rows: repeat(3, auto);
 `)
 
-export const ProjectTitle = styled.h4(({ theme: { mediaQuery, ...theme } }) => `
+export const ProjectTitle = styled.h4(({ theme }) => `
   font-size: 24px;
   font-weight: 300;
   color: ${theme.text};
 `)
 
-export const ProjectPosition = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+export const ProjectPosition = styled(BaseText)(({ theme }) => `
   color: ${theme.subText};
 `)
 
-export const ProjectDescription = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+export const ProjectDescription = styled(BaseText)(() => `
   line-height: 1.5;
   padding: 8px 0;
 `)

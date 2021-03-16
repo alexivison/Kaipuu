@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const Container = styled.div(({ theme: { mediaQuery } }) => `
   display: grid;
   grid-auto-flow: row;
   grid-gap: 16px;

@@ -20,7 +20,7 @@ export const Container = styled.section(({ theme: { mediaQuery, ...theme } }) =>
   }
 `)
 
-export const TextContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const TextContainer = styled.div(({ theme: { mediaQuery } }) => `
   display: grid;
   grid-gap: 40px;
   align-content: center;

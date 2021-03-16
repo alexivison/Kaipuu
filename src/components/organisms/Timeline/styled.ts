@@ -3,7 +3,7 @@ import { animated } from 'react-spring'
 
 import BaseText from '../../atoms/Text'
 
-export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const Container = styled.div(({ theme: { mediaQuery } }) => `
   position: relative;
 
   display: grid;
@@ -19,7 +19,7 @@ export const Container = styled.div(({ theme: { mediaQuery, ...theme } }) => `
   }
 `)
 
-export const DateContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const DateContainer = styled.div(({ theme: { mediaQuery } }) => `
   z-index: 1;
 
   display: grid;
@@ -56,7 +56,7 @@ export const Content = styled(animated.div)(({ theme: { mediaQuery, ...theme } }
   }
 `)
 
-export const Title = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+export const Title = styled(BaseText)(({ theme: { mediaQuery } }) => `
   ${mediaQuery.small} {
     line-height: 1.5;
   }

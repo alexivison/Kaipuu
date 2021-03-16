@@ -14,10 +14,6 @@ import {
   Github,
 } from './styled'
 
-import Image from '../../atoms/Image'
-
-import MenuIcon from '../../../res/icon/menu.svg'
-
 interface Props {
   routes: RouteMap
   header?: { title: string, subTitle?: string }
@@ -40,7 +36,7 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
     setIsOpen(false)
   }, [])
 
-  const onClickMenuItem = useCallback((route) => {
+  const onClickMenuItem = useCallback(() => {
     onCloseMenu()
   }, [])
 
@@ -48,7 +44,7 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
     <>
       <Container>
         <LeftButton onClick={onOpenMenu}>
-          <Image size={48} src={MenuIcon} />
+
         </LeftButton>
       </Container>
       {transitions.map(({ item, key, props }) => item && (
@@ -56,7 +52,7 @@ const MobileNav: React.FC<Props> = ({ routes }) => {
           <MenuHeader></MenuHeader>
           <MenuContent>
             {Object.values(routes).map((route, index) => (
-              <MenuItem key={index} onClick={() => onClickMenuItem(route.path)}>
+              <MenuItem key={index} onClick={() => onClickMenuItem()}>
                 {`.0${index} ${route.title}`}
               </MenuItem>
             ))}

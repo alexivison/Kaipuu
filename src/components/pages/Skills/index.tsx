@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { animated, useTrail, useTransition } from 'react-spring'
+import React from 'react'
 
 import data  from '../../../res/pageData/skills'
 import { 

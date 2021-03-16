@@ -16,12 +16,12 @@ export const Container = styled.section(({ theme: { mediaQuery, ...theme } }) =>
   }
 `)
 
-export const HeaderWrapper = styled.div(({ theme }) => `
+export const HeaderWrapper = styled.div(() => `
   display: grid;
   grid-template-columns: 1fr auto;
 `)
 
-export const Introduction = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) => `
+export const Introduction = styled(BaseText)(({ theme: { mediaQuery } }) => `
   line-height: 1.5;
   font-size: 24px;
 
@@ -30,7 +30,7 @@ export const Introduction = styled(BaseText)(({ theme: { mediaQuery, ...theme } 
   }
 `)
 
-export const ContentWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const ContentWrapper = styled.div(({ theme: { mediaQuery } }) => `
   position: relative;
 
   display: flex;
@@ -41,7 +41,7 @@ export const ContentWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) =
   }
 `)
 
-export const SocialWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const SocialWrapper = styled.div(({ theme: { mediaQuery } }) => `
   z-index: 1;
 
   font-size: 16px;
@@ -67,7 +67,7 @@ export const SocialLink = styled.a(({ theme }) => `
   text-decoration: none;
 `)
 
-export const TimelineWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const TimelineWrapper = styled.div(({ theme: { mediaQuery } }) => `
   width: 100%;
 
   margin-left: 40px;
@@ -77,7 +77,7 @@ export const TimelineWrapper = styled.div(({ theme: { mediaQuery, ...theme } }) 
   }
 `)
 
-export const Image = styled.img(({ theme: { mediaQuery, ...theme } }) => `
+export const Image = styled.img(({ theme: { mediaQuery } }) => `
   position: absolute;
   top: 0;
   right: 0;

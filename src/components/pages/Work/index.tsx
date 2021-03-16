@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import React, { useCallback } from 'react'
+import React from 'react'
 
 import data from '../../../res/pageData/work'
 import { 
   Container,
   SectionHeaderWrapper,
-  QuoteContainer,
-  Quote,
   WorkContainer,
   ScrollContainer,
-  Fade,
 } from './styled'
 
 import Produce from '../../organisms/Produce'

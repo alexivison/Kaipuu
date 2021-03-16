@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import BaseText from '../../atoms/Text'
-import BaseImage from '../../atoms/Image'
 
 export const Container = styled.div``
 
@@ -29,7 +28,7 @@ export const TextContainer = styled.div(({ theme: { mediaQuery, ...theme } }) =>
   }
 `)
 
-export const ProfileImage = styled(BaseImage)(({ theme: { mediaQuery } }) => `
+export const ProfileImage = styled.img(({ theme: { mediaQuery } }) => `
   width: 340px;
   height: 340px;
   filter: saturate(0.3);

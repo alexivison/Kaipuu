@@ -15,7 +15,9 @@ const PageNumber: React.FC<{ children: string }> = ({ children }) => {
 const Container = styled.p(({ theme: { mediaQuery, ...theme } }) => `
   font-size: 48px;
   letter-spacing: 8px;
-  color: rgba(255, 255, 255, 20%);
+  color: ${theme.subText};
+
+  opacity: 0.2;
 
   ${mediaQuery.small} {
     font-size: 24px;

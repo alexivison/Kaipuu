@@ -35,7 +35,7 @@ export const Category = styled(BaseText)(({ theme: { mediaQuery, ...theme } }) =
   }
 `)
 
-export const ScrollContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const ScrollContainer = styled.div(({ theme: { mediaQuery } }) => `
   display: grid;
   grid-gap: 32px;
   width: 100%;
@@ -68,7 +68,7 @@ export const SkillListWrapper = styled.div(({ theme: { mediaQuery, ...theme } })
   }
 `)
 
-export const SkillContainer = styled.div(({ theme: { mediaQuery, ...theme } }) => `
+export const SkillContainer = styled.div(({ theme: { mediaQuery } }) => `
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 80px;

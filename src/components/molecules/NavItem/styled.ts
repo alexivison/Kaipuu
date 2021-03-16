@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { animated } from 'react-spring'
 
 import Text from '../../atoms/Text'
-import Link from '../../atoms/Link'
 
 export const Container = styled.div`
   display: grid;
