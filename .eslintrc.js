@@ -1,13 +1,16 @@
 module.exports = {
   root: true,
+
   parser: '@typescript-eslint/parser',
+
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
+    project: "./tsconfig.json",
     "ecmaFeatures": {
       "jsx": true
     }
   },
+
   "rules": {
     "react/prop-types": "off",
     "@typescript-eslint/member-delimiter-style": "off",
@@ -17,10 +20,12 @@ module.exports = {
       { allowExpressions: true }
     ]
   },
+
   plugins: [
     '@typescript-eslint',
     'react-hooks'
   ],
+
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -28,9 +33,11 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking'
   ],
+
   "settings": {
     "react": {
       "version": "detect"
     }
-  }
-};
+  },
+
+}

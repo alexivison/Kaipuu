@@ -9,15 +9,6 @@ declare namespace NodeJS {
   }
 }
 
-declare namespace React {
-  interface FunctionComponent {
-    header?: {
-      title: string
-      subTitle?: string
-    }
-  }
-}
-
 declare module '*.bmp' {
   const src: string;
   export default src;

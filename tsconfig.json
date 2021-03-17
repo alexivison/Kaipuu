@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist",
+    "outDir": "public",
     "module": "esnext",
     "target": "es2020",
     "sourceMap": true,
@@ -22,15 +22,10 @@
     "strict": true,
     "resolveJsonModule": true,
     "isolatedModules": false,
-    "noEmit": true
   },
   "exclude": [
     "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest"
+    "public",
   ],
   "include": ["src"]
 }
